@@ -1,0 +1,24 @@
+{
+  "transaction" : {
+    "properties" : {
+      "contractAddress" : {
+        "type" : "string"
+      },
+      "transactionIndex" : {
+        "type" : "long"
+      },
+      "value" : {
+        "type" : "double"
+      },
+      "gas" : {
+        "type" : "long"
+      },
+      "gasPrice" : {
+        "type" : "long"
+      },
+      "blockNumber" : {
+        "type" : "long"
+      }
+    }
+  }
+}

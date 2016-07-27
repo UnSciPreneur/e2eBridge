@@ -1,0 +1,12 @@
+{
+  "address" : {
+    "properties" : {
+      "class" : {
+        "type" : "string"
+      },
+      "comment" : {
+        "type" : "string"
+      }
+    }
+  }
+}

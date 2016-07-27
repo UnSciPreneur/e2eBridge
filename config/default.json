@@ -1,0 +1,21 @@
+{
+  "ethereum": {
+    "host": "localhost",
+    "port": 8545
+  },
+  "elasticsearch": {
+    "host": "localhost",
+    "port": 9200,
+    "index": {
+      "name": "ethereum",
+      "number_of_shards": 3,
+      "number_of_replicas": 0
+    }
+  },
+  "contracts" : {
+    "example": {
+      "address": "0x",
+      "index": ""
+    }
+  }
+}

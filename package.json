@@ -1,0 +1,45 @@
+{
+  "private": true,
+  "license": "Unlicensed",
+  "author": "Andreas Bogner",
+  "name": "e2e-bridge",
+  "description": "A bridge between the ethereum blockchain and elasticsearch",
+  "version": "0.0.1",
+  "homepage": "",
+  "repository": {
+    "type": "svn",
+    "url": ""
+  },
+  "bin": {
+    "etherBridge": "./lib/cli/cli.js"
+  },
+  "engines": {
+    "npm": "~2.0.0",
+    "node": ">=0.10"
+  },
+  "dependencies": {
+    "elasticsearch": "11.0.1",
+    "command-line-args": "^2.1.1",
+    "config": "^1.16.0",
+    "log4js": "0.6.37",
+    "rlp": "2.0.0",
+    "sha3": "1.2.0"
+  },
+  "devDependencies": {
+    "mocha": "2.3.0",
+    "cheerio": ">=0.20.0",
+    "dateformat": ">=1.0.12",
+    "xmlhttprequest": "1.8.0",
+    "cache-manager": "2.1.2"
+  },
+  "keywords": [
+    "ethereum",
+    "elasticsearch"
+  ],
+  "main": "./e2eBridge.js",
+  "scripts": {
+    "start": "node start",
+    "dump": "node elasticdump --input=http://localhost:9200/.kibana  --output=$  --type=data --searchBody='{\"filter\": { \"or\": [ {\"type\": {\"value\": \"dashboard\"}}, {\"type\" : {\"value\":\"visualization\"}}] }}' > kibana-exported.json",
+    "test": "find . -regex '.*/jobs/.*/test/.*.js' | xargs mocha"
+  }
+}
