@@ -23,6 +23,9 @@ if (options.mode) {
     case 'stats':
       printStats();
       break;
+    case 'pingElastic':
+      elasticClient.ping();
+      break;
     case 'follow':
       combinedParser.follow();
       break;
@@ -57,9 +60,7 @@ if (options.mode) {
       rl.question('Are you sure you want to initialize the index? [y/N] ', function (answer) {
         console.log("you entered: [" + answer.toString().trim() + "]");
         if (answer.toString().trim() === 'y' || answer.toString().trim() === 'Y') {
-          logger.info('Initializing index...');
-          elasticClient.destroy();
-          elasticClient.init();
+          clearIndex(initIndex);
         }
         rl.close();
       });
@@ -79,6 +80,18 @@ function printStats() {
       }
     });
   });
+}
+
+function clearIndex(callback) {
+  logger.info('Dropping index...');
+  // ToDo: check if the index exists
+  elasticClient.destroy();
+  callback();
+}
+
+function initIndex() {
+  logger.info('Initializing index...');
+  elasticClient.init();
 }
 
 // create an index: curl -XPUT 'http://localhost:9200/ethereum/' -d '{ "settings" : { "index" : { "number_of_shards" : 3, "number_of_replicas" : 1  } } }'
