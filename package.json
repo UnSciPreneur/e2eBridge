@@ -10,9 +10,6 @@
     "type": "svn",
     "url": ""
   },
-  "bin": {
-    "etherBridge": "./lib/cli/cli.js"
-  },
   "engines": {
     "npm": "~2.0.0",
     "node": ">=0.10"
@@ -38,8 +35,7 @@
   ],
   "main": "./e2eBridge.js",
   "scripts": {
-    "start": "node start",
-    "dump": "node elasticdump --input=http://localhost:9200/.kibana  --output=$  --type=data --searchBody='{\"filter\": { \"or\": [ {\"type\": {\"value\": \"dashboard\"}}, {\"type\" : {\"value\":\"visualization\"}}] }}' > kibana-exported.json",
+    "start": "node e2eBridge follow",
     "test": "find . -regex '.*/jobs/.*/test/.*.js' | xargs mocha"
   }
 }
