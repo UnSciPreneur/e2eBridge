@@ -1,0 +1,36 @@
+[
+  {
+    "_id": "ethereumBlockDash",
+    "_type": "dashboard",
+    "_source": {
+      "title": "ethereumBlockDash",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[\n  {\n    \"col\": 7,\n    \"id\": \"20LargestMiners\",\n    \"panelIndex\": 1,\n    \"row\": 1,\n    \"size_x\": 3,\n    \"size_y\": 2,\n    \"type\": \"visualization\"\n  },\n  {\n    \"col\": 7,\n    \"id\": \"blocksBySize\",\n    \"panelIndex\": 2,\n    \"row\": 3,\n    \"size_x\": 6,\n    \"size_y\": 2,\n    \"type\": \"visualization\"\n  },\n  {\n    \"col\": 1,\n    \"id\": \"blocksByNumTransactions\",\n    \"panelIndex\": 5,\n    \"row\": 1,\n    \"size_x\": 3,\n    \"size_y\": 2,\n    \"type\": \"visualization\"\n  },\n  {\n    \"col\": 10,\n    \"id\": \"blocksIndexed\",\n    \"panelIndex\": 6,\n    \"row\": 1,\n    \"size_x\": 3,\n    \"size_y\": 2,\n    \"type\": \"visualization\"\n  },\n  {\n    \"col\": 1,\n    \"id\": \"avgGasUsedByDay\",\n    \"panelIndex\": 7,\n    \"row\": 7,\n    \"size_x\": 6,\n    \"size_y\": 2,\n    \"type\": \"visualization\"\n  },\n  {\n    \"col\": 7,\n    \"id\": \"blocksByExtraData\",\n    \"panelIndex\": 8,\n    \"row\": 5,\n    \"size_x\": 6,\n    \"size_y\": 4,\n    \"type\": \"visualization\"\n  },\n  {\n    \"col\": 4,\n    \"id\": \"blocksByNumUncles\",\n    \"panelIndex\": 9,\n    \"row\": 1,\n    \"size_x\": 3,\n    \"size_y\": 2,\n    \"type\": \"visualization\"\n  },\n  {\n    \"col\": 1,\n    \"id\": \"numTransactionsByDay\",\n    \"panelIndex\": 10,\n    \"row\": 3,\n    \"size_x\": 6,\n    \"size_y\": 2,\n    \"type\": \"visualization\"\n  },\n  {\n    \"col\": 1,\n    \"id\": \"avgDifficultyOverTime\",\n    \"panelIndex\": 11,\n    \"row\": 5,\n    \"size_x\": 6,\n    \"size_y\": 2,\n    \"type\": \"visualization\"\n  }\n]",
+      "optionsJSON": "{\n  \"darkTheme\": true\n}",
+      "uiStateJSON": "{\n  \"P-1\": {\n    \"vis\": {\n      \"legendOpen\": true\n    }\n  },\n  \"P-10\": {\n    \"vis\": {\n      \"legendOpen\": false\n    }\n  },\n  \"P-11\": {\n    \"vis\": {\n      \"colors\": {\n        \"Average difficulty\": \"#BF1B00\"\n      },\n      \"legendOpen\": false\n    }\n  },\n  \"P-2\": {\n    \"spy\": {\n      \"mode\": {\n        \"fill\": false,\n        \"name\": null\n      }\n    },\n    \"vis\": {\n      \"legendOpen\": false\n    }\n  },\n  \"P-7\": {\n    \"vis\": {\n      \"legendOpen\": false\n    }\n  },\n  \"P-9\": {\n    \"vis\": {\n      \"legendOpen\": false\n    }\n  }\n}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"filter\": [\n    {\n      \"query\": {\n        \"query_string\": {\n          \"analyze_wildcard\": true,\n          \"query\": \"*\"\n        }\n      }\n    }\n  ]\n}"
+      }
+    }
+  },
+  {
+    "_id": "ethereumTransactionDash",
+    "_type": "dashboard",
+    "_source": {
+      "title": "ethereumTransactionDash",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[\n  {\n    \"col\": 1,\n    \"id\": \"mostValuableAddresses\",\n    \"panelIndex\": 1,\n    \"row\": 1,\n    \"size_x\": 6,\n    \"size_y\": 4,\n    \"type\": \"visualization\"\n  },\n  {\n    \"col\": 7,\n    \"id\": \"avgTxValueOverTime\",\n    \"panelIndex\": 2,\n    \"row\": 1,\n    \"size_x\": 6,\n    \"size_y\": 3,\n    \"type\": \"visualization\"\n  },\n  {\n    \"col\": 7,\n    \"id\": \"transactionCount\",\n    \"panelIndex\": 3,\n    \"row\": 7,\n    \"size_x\": 6,\n    \"size_y\": 2,\n    \"type\": \"visualization\"\n  },\n  {\n    \"col\": 7,\n    \"id\": \"avgGasOverTime\",\n    \"panelIndex\": 4,\n    \"row\": 4,\n    \"size_x\": 6,\n    \"size_y\": 3,\n    \"type\": \"visualization\"\n  },\n  {\n    \"id\": \"mostValuableSources\",\n    \"type\": \"visualization\",\n    \"panelIndex\": 5,\n    \"size_x\": 6,\n    \"size_y\": 2,\n    \"col\": 1,\n    \"row\": 5\n  },\n  {\n    \"id\": \"mostValuableTargets\",\n    \"type\": \"visualization\",\n    \"panelIndex\": 6,\n    \"size_x\": 6,\n    \"size_y\": 2,\n    \"col\": 1,\n    \"row\": 7\n  }\n]",
+      "optionsJSON": "{\n  \"darkTheme\": true\n}",
+      "uiStateJSON": "{\n  \"P-2\": {\n    \"vis\": {\n      \"legendOpen\": false\n    },\n    \"spy\": {\n      \"mode\": {\n        \"name\": null,\n        \"fill\": false\n      }\n    }\n  },\n  \"P-4\": {\n    \"vis\": {\n      \"colors\": {\n        \"Average gas\": \"#508642\"\n      },\n      \"legendOpen\": false\n    }\n  }\n}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"filter\": [\n    {\n      \"query\": {\n        \"query_string\": {\n          \"analyze_wildcard\": true,\n          \"query\": \"*\"\n        }\n      }\n    }\n  ]\n}"
+      }
+    }
+  }
+]

@@ -94,19 +94,6 @@ function initIndex() {
   elasticClient.init();
 }
 
-// create an index: curl -XPUT 'http://localhost:9200/ethereum/' -d '{ "settings" : { "index" : { "number_of_shards" : 3, "number_of_replicas" : 1  } } }'
-
-// now run:       curl -XPUT 'http://localhost:9200/ethereum/block/_mapping' -d @config/blockMapping.json
-// now run:       curl -XPUT 'http://localhost:9200/ethereum/transaction/_mapping' -d @config/transactionMapping.json
-// or:            curl -XPUT 'http://localhost:9200/ethereum/address/_mapping' -d @config/addressMapping.json
-// verify with:   curl -XGET 'localhost:9200/ethereum/_mapping/block'
-// verify with:   curl -XGET 'localhost:9200/ethereum/_mapping/transaction'
-// verify with:   curl -XGET 'localhost:9200/ethereum/_mapping/address'
-
-
-// To store an address in the index
-// curl -XPUT 'http://localhost:9200/ethereum/address/0x2910543af39aba0cd09dbb2d50200b3e800a63d2' -d '{"comment" : "Kraken"}'
-
 /*
 
  var options = { 'type': 'data',
