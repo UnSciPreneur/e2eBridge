@@ -16,14 +16,22 @@ First we create an index by running
 `curl -XPUT 'http://localhost:9200/ethereum/' -d '{ "settings" : { "index" : { "number_of_shards" : 3, "number_of_replicas" : 1  } } }'`
 
 In a second step we define mappings for our types:
-`curl -XPUT 'http://localhost:9200/ethereum/block/_mapping' -d @config/ethereum/blockMapping.json
-curl -XPUT 'http://localhost:9200/ethereum/transaction/_mapping' -d @config/ethereum/transactionMapping.json
-curl -XPUT 'http://localhost:9200/ethereum/address/_mapping' -d @config/ethereum/addressMapping.json`
+
+`curl -XPUT 'http://localhost:9200/ethereum/block/_mapping' -d @config/ethereum/blockMapping.json`
+
+`curl -XPUT 'http://localhost:9200/ethereum/transaction/_mapping' -d @config/ethereum/transactionMapping.json`
+
+`curl -XPUT 'http://localhost:9200/ethereum/address/_mapping' -d @config/ethereum/addressMapping.json`
 
 You can verify the result with
-`curl -XGET 'localhost:9200/ethereum/_mapping/block'
-curl -XGET 'localhost:9200/ethereum/_mapping/transaction'
-curl -XGET 'localhost:9200/ethereum/_mapping/address'`
+
+`curl -XGET 'localhost:9200/ethereum/_mapping/block'`
+
+`curl -XGET 'localhost:9200/ethereum/_mapping/transaction'`
+
+`curl -XGET 'localhost:9200/ethereum/_mapping/address'`
+
+**IMPORTANT: Create the mappings before you start indexing documents! The mapping cannot be created after indexing.**
 
 ### Configuring Kibana
 
