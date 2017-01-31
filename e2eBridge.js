@@ -68,6 +68,11 @@ if (options.mode) {
     default:
       logger.warn('Unknown mode ' + options.mode);
   }
+} else {
+  console.log('Please call as \'node e2eBridge MODE\' where MODE is one of the following:');
+  console.log('\t stats \t\t\t show some numbers');
+  console.log('\t follow \t\t start indexing blocks at highest index in db');
+  console.log('\t batch -f \<f\> -t \<t\>\t index blocks between \<f\> and \<t\>');
 }
 
 function printStats() {
