@@ -13,23 +13,23 @@ _e2eBridge_ expects to find a geth client with rpc interface and an Elasticsearc
 **For all of the following we assume that we are in the git root of this project.**
 
 First we create an index by running
-`curl -XPUT 'http://localhost:9200/ethereum/' -d '{ "settings" : { "index" : { "number_of_shards" : 3, "number_of_replicas" : 1  } } }'`
+```bash
+curl -XPUT 'http://localhost:9200/ethereum/' -d '{ "settings" : { "index" : { "number_of_shards" : 3, "number_of_replicas" : 1  } } }'
+```
 
 In a second step we define mappings for our types:
-
-`curl -XPUT 'http://localhost:9200/ethereum/block/_mapping' -d @config/ethereum/blockMapping.json`
-
-`curl -XPUT 'http://localhost:9200/ethereum/transaction/_mapping' -d @config/ethereum/transactionMapping.json`
-
-`curl -XPUT 'http://localhost:9200/ethereum/address/_mapping' -d @config/ethereum/addressMapping.json`
+```bash
+curl -XPUT 'http://localhost:9200/ethereum/block/_mapping' -d @config/ethereum/blockMapping.json
+curl -XPUT 'http://localhost:9200/ethereum/transaction/_mapping' -d @config/ethereum/transactionMapping.json
+curl -XPUT 'http://localhost:9200/ethereum/address/_mapping' -d @config/ethereum/addressMapping.json
+```
 
 You can verify the result with
-
-`curl -XGET 'localhost:9200/ethereum/_mapping/block'`
-
-`curl -XGET 'localhost:9200/ethereum/_mapping/transaction'`
-
-`curl -XGET 'localhost:9200/ethereum/_mapping/address'`
+```bash
+curl -XGET 'localhost:9200/ethereum/_mapping/block'
+curl -XGET 'localhost:9200/ethereum/_mapping/transaction'
+curl -XGET 'localhost:9200/ethereum/_mapping/address'
+```
 
 **IMPORTANT: Create the mappings before you start indexing documents! The mapping cannot be created after indexing.**
 
@@ -48,8 +48,9 @@ Search for contract creating transactions:
 ### Elasticsearch
 
 You can add an address manually by running
-`curl -XPUT 'http://localhost:9200/ethereum/address/0x2910543af39aba0cd09dbb2d50200b3e800a63d2' -d '{"comment" : "Kraken"}'`
-
+```bash
+curl -XPUT 'http://localhost:9200/ethereum/address/0x2910543af39aba0cd09dbb2d50200b3e800a63d2' -d '{"comment" : "Kraken"}'
+```
 
 # Other
 
