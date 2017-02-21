@@ -8,6 +8,46 @@ _e2eBridge_ expects to find a geth client with rpc interface and an Elasticsearc
 
 ## Setup
 
+### Setting up Elasticsearch with docker
+
+Pull the image from docker hub:
+```bash
+docker pull blacktop/elk
+```
+
+```bash
+docker run -d -p 9280:80 -p 9200:9200 --name elk blacktop/elk 
+```
+to start up the container for the first time which is then available at `localhost:9280` (credentials are `admin/admin`)
+
+
+Later you can simply do
+```bash
+docker start elk
+```
+and
+```bash
+docker stop elk
+```
+
+Connect into a docker shell with
+```bash
+docker exec -it elk bash
+```
+
+List all indices and aliases in your local system:
+```
+http://localhost:9200/_aliases?pretty=1
+```
+or equivalently
+```
+http://localhost:9200/_stats/indices
+```
+or from the command line:
+```bash
+curl 'localhost:9200/_cat/indices?v'
+```
+
 ### Configuring Elasticsearch
 
 **For all of the following we assume that we are in the git root of this project.**

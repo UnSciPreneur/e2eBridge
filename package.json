@@ -35,7 +35,7 @@
   ],
   "main": "./e2eBridge.js",
   "scripts": {
-    "start": "node e2eBridge follow",
+    "start": "node index follow",
     "test": "find . -regex '.*/jobs/.*/test/.*.js' | xargs mocha"
   }
 }
