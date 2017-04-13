@@ -163,7 +163,7 @@
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"privatenet\",\"query\":{\"query_string\":{\"query\":\"_type:transaction AND blockNumber:[120000 TO 2000000]\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"privatenet\",\"query\":{\"query_string\":{\"query\":\"_type:transaction\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },

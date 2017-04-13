@@ -18,8 +18,11 @@ docker pull blacktop/elk
 ```bash
 docker run -d -p 9280:80 -p 9200:9200 --name elk blacktop/elk 
 ```
-to start up the container for the first time which is then available at `localhost:9280` (credentials are `admin/admin`)
-
+to start up the container for the first time which is then available at `localhost:9280`. Credentials are `admin/admin`. If you want to change open a shell in the docker container
+```bash
+docker exec -ti elk bash
+```
+and edit `/etc/nginx/.htpasswd`.
 
 Later you can simply do
 ```bash
@@ -32,7 +35,7 @@ docker stop elk
 
 Connect into a docker shell with
 ```bash
-docker exec -it elk bash
+docker exec -ti elk bash
 ```
 
 List all indices and aliases in your local system:
