@@ -75,6 +75,8 @@ curl -XGET 'localhost:9200/ethereum/_mapping/address'
 
 ### Configuring Kibana
 
+**Note:** Before configuring Kibana it might be necessary to actually import (some) data. Else certain fields are not available and some visualizations cannot be imported!
+
 Now we import the visualizations and dashboards over the web GUI. The config files can be found in 
 `config/ethereum/visualizations.json` and `config/ethereum/dashboards.json`
 
