@@ -80,7 +80,9 @@ function printStats() {
     logger.info('The index [' + config.get('elasticsearch.index.name') + '] contains ' + stats.blockCount + ' blocks and ' + stats.transactionCount + ' transactions.');
 
     elasticClient.getHighestBlockIndex(function (highestIndex) {
-      if (stats.blockCount < highestIndex + 1) {
+      if (!highestIndex) {
+        logger.warn("No blocks have been indexed yet.")
+      } else if (stats.blockCount < highestIndex + 1) {
         logger.warn("We are missing blocks in the index: (" + stats.blockCount + '/' + highestIndex + ') present');
       }
     });
