@@ -37,7 +37,9 @@ if (options.mode) {
     case 'batch':
       from = options.from || 0;
       to = options.to || 20000000;
-      combinedParser.batchRun(from, to);
+      if (from <= to) {
+        combinedParser.batchRun(from, to);
+      }
       break;
     case 'blocks':
       from = options.from || 0;
