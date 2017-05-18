@@ -1,13 +1,18 @@
-const log4js = require('log4js');
-const logger = log4js.getLogger();
-const config = require('config');
+'use strict';
+
 const commandLineArgs = require('command-line-args');
+const config = require('config');
+const log4js = require('log4js');
 
 const blockParser = require('./lib/blockParser');
 const transactionParser = require('./lib/transactionParser');
 const combinedParser = require('./lib/combinedParser');
 const elasticClient = require('./lib/elasticClient');
 const contractParser = require('./lib/contractParser');
+
+const logger = log4js.getLogger('main');
+logger.setLevel(config.get('logging.level'));
+
 
 const cli = commandLineArgs([
   {name: 'mode', alias: 'm', type: String, defaultOption: true},

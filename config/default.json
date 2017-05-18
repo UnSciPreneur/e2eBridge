@@ -17,5 +17,8 @@
       "address": "0x",
       "index": ""
     }
+  },
+  "logging": {
+    "level": "debug"
   }
 }
