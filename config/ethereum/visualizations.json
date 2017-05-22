@@ -9,7 +9,7 @@
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"ethereum*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"ethereum\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[]}"
       }
     }
   },
@@ -23,7 +23,7 @@
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"ethereum*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"ethereum\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
@@ -37,7 +37,7 @@
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"ethereum*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"ethereum\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[]}"
       }
     }
   },
@@ -51,7 +51,7 @@
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\n  \"index\": \"ethereum*\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"size:[400 TO 1200]\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+        "searchSourceJSON": "{\n  \"index\": \"ethereum\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"size:[400 TO 1200]\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
       }
     }
   },
@@ -65,7 +65,7 @@
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\n  \"index\": \"ethereum*\",\n  \"query\": {\n    \"query_string\": {\n      \"analyze_wildcard\": true,\n      \"query\": \"NOT _id:0\"\n    }\n  },\n  \"filter\": []\n}"
+        "searchSourceJSON": "{\n  \"index\": \"ethereum\",\n  \"query\": {\n    \"query_string\": {\n      \"analyze_wildcard\": true,\n      \"query\": \"NOT _id:0\"\n    }\n  },\n  \"filter\": []\n}"
       }
     }
   },
@@ -79,7 +79,7 @@
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\n  \"index\": \"ethereum*\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"NOT _id:0\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+        "searchSourceJSON": "{\n  \"index\": \"ethereum\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"NOT _id:0\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
       }
     }
   },
@@ -93,7 +93,7 @@
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"ethereum*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"ethereum\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
@@ -107,7 +107,7 @@
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\n  \"index\": \"ethereum*\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"NOT _id:0\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+        "searchSourceJSON": "{\n  \"index\": \"ethereum\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"NOT _id:0\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
       }
     }
   },
@@ -121,7 +121,7 @@
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"ethereum*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"ethereum\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
@@ -135,7 +135,7 @@
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"ethereum*\",\"query\":{\"query_string\":{\"query\":\"NOT _id:0\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"ethereum\",\"query\":{\"query_string\":{\"query\":\"NOT _id:0\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
@@ -149,7 +149,7 @@
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"ethereum*\",\"query\":{\"query_string\":{\"query\":\"NOT _id:0 AND _type:block\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"ethereum\",\"query\":{\"query_string\":{\"query\":\"NOT _id:0 AND _type:block\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
@@ -163,7 +163,7 @@
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"ethereum*\",\"query\":{\"query_string\":{\"query\":\"_type:transaction\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"ethereum\",\"query\":{\"query_string\":{\"query\":\"_type:transaction\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
@@ -177,7 +177,7 @@
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"ethereum*\",\"query\":{\"query_string\":{\"query\":\"_type:transaction\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"ethereum\",\"query\":{\"query_string\":{\"query\":\"_type:transaction\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
@@ -191,7 +191,7 @@
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"ethereum*\",\"query\":{\"query_string\":{\"query\":\"_type:transaction\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"ethereum\",\"query\":{\"query_string\":{\"query\":\"_type:transaction\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
@@ -205,7 +205,7 @@
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"ethereum*\",\"query\":{\"query_string\":{\"query\":\"_type:block\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"ethereum\",\"query\":{\"query_string\":{\"query\":\"_type:block\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
@@ -219,7 +219,7 @@
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"ethereum*\",\"query\":{\"query_string\":{\"query\":\"_type:transaction\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"ethereum\",\"query\":{\"query_string\":{\"query\":\"_type:transaction\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
@@ -233,7 +233,7 @@
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"ethereum*\",\"query\":{\"query_string\":{\"query\":\"_type:transaction\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"ethereum\",\"query\":{\"query_string\":{\"query\":\"_type:transaction\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   }
