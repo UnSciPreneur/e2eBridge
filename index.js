@@ -36,19 +36,19 @@ if (options.mode) {
       break;
     case 'batch':
       from = options.from || 0;
-      to = options.to || 20000000;
+      to = options.to || Infinity;
       if (from <= to) {
         combinedParser.batchRun(from, to);
       }
       break;
     case 'blocks':
       from = options.from || 0;
-      to = options.to || 20000000;
+      to = options.to || Infinity;
       blockParser.batchRun(from, to);
       break;
     case 'transactions':
       from = options.from || 0;
-      to = options.to || 20000000;
+      to = options.to || Infinity;
       transactionParser.batchRun(from, to);
       break;
     case 'contract':
