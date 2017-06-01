@@ -124,3 +124,4 @@ elasticdump --input=http://localhost:9200/.kibana --output=http://app.b0x.it:920
 ## Alternative solutions
 
 see https://github.com/nexusdev/elastic-ethereum
+see https://github.com/ethereum/research/blob/master/uncle_regressions/block_datadump_generator.py
