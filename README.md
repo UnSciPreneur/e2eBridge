@@ -10,13 +10,13 @@ _e2eBridge_ expects to find a geth client with rpc interface and an Elasticsearc
 
 ### Setting up Elasticsearch with docker
 
-Pull the image from docker hub:
+Pull the image from docker hub (https://hub.docker.com/r/blacktop/elastic-stack/):
 ```bash
-docker pull blacktop/elk
+docker pull blacktop/elastic-stack
 ```
 
 ```bash
-docker run -d -p 9280:80 -p 9200:9200 --name elk blacktop/elk 
+docker run -d -p 9280:80 -p 127.0.0.1:9200:9200 --name elk blacktop/elastic-stack 
 ```
 to start up the container for the first time which is then available at `localhost:9280`. Credentials are `admin/admin`. If you want to change open a shell in the docker container
 ```bash
@@ -57,7 +57,7 @@ curl 'localhost:9200/_cat/indices?v'
 
 First we create an index by running
 ```bash
-curl -XPUT 'http://localhost:9200/ethereum/' -d '{ "settings" : { "index" : { "number_of_shards" : 3, "number_of_replicas" : 1  } } }'
+curl -XPUT 'http://localhost:9200/ethereum/' -d '{ "settings" : { "index" : { "number_of_shards" : 2, "number_of_replicas" : 0  } } }'
 ```
 
 In a second step we define mappings for our types:

@@ -3,16 +3,16 @@
     "_id": "privNetBlockDash",
     "_type": "dashboard",
     "_source": {
-      "title": "Private Net ethereumBlockDash",
+      "title": "PrivateNet ethereumBlockDash",
       "hits": 0,
       "description": "",
-      "panelsJSON": "[\n  {\n    \"col\": 7,\n    \"id\": \"privNet20LargestMiners\",\n    \"panelIndex\": 1,\n    \"row\": 1,\n    \"size_x\": 3,\n    \"size_y\": 2,\n    \"type\": \"visualization\"\n  },\n  {\n    \"col\": 7,\n    \"id\": \"privNetblocksBySize\",\n    \"panelIndex\": 2,\n    \"row\": 3,\n    \"size_x\": 6,\n    \"size_y\": 2,\n    \"type\": \"visualization\"\n  },\n  {\n    \"col\": 1,\n    \"id\": \"privNetblocksByNumTransactions\",\n    \"panelIndex\": 5,\n    \"row\": 1,\n    \"size_x\": 3,\n    \"size_y\": 2,\n    \"type\": \"visualization\"\n  },\n  {\n    \"col\": 10,\n    \"id\": \"privNetblocksIndexed\",\n    \"panelIndex\": 6,\n    \"row\": 1,\n    \"size_x\": 3,\n    \"size_y\": 2,\n    \"type\": \"visualization\"\n  },\n  {\n    \"col\": 1,\n    \"id\": \"privNetavgGasUsedByDay\",\n    \"panelIndex\": 7,\n    \"row\": 7,\n    \"size_x\": 6,\n    \"size_y\": 2,\n    \"type\": \"visualization\"\n  },\n  {\n    \"col\": 7,\n    \"id\": \"privNetblocksByExtraData\",\n    \"panelIndex\": 8,\n    \"row\": 5,\n    \"size_x\": 6,\n    \"size_y\": 4,\n    \"type\": \"visualization\"\n  },\n  {\n    \"col\": 4,\n    \"id\": \"privNetblocksByNumUncles\",\n    \"panelIndex\": 9,\n    \"row\": 1,\n    \"size_x\": 3,\n    \"size_y\": 2,\n    \"type\": \"visualization\"\n  },\n  {\n    \"col\": 1,\n    \"id\": \"privNetnumTransactionsByDay\",\n    \"panelIndex\": 10,\n    \"row\": 3,\n    \"size_x\": 6,\n    \"size_y\": 2,\n    \"type\": \"visualization\"\n  },\n  {\n    \"col\": 1,\n    \"id\": \"privNetavgDifficultyOverTime\",\n    \"panelIndex\": 11,\n    \"row\": 5,\n    \"size_x\": 6,\n    \"size_y\": 2,\n    \"type\": \"visualization\"\n  }\n]",
-      "optionsJSON": "{\n  \"darkTheme\": true\n}",
-      "uiStateJSON": "{\n  \"P-1\": {\n    \"vis\": {\n      \"legendOpen\": true\n    }\n  },\n  \"P-10\": {\n    \"vis\": {\n      \"legendOpen\": false\n    }\n  },\n  \"P-11\": {\n    \"vis\": {\n      \"colors\": {\n        \"Average difficulty\": \"#BF1B00\"\n      },\n      \"legendOpen\": false\n    }\n  },\n  \"P-2\": {\n    \"spy\": {\n      \"mode\": {\n        \"fill\": false,\n        \"name\": null\n      }\n    },\n    \"vis\": {\n      \"legendOpen\": false\n    }\n  },\n  \"P-7\": {\n    \"vis\": {\n      \"legendOpen\": false\n    }\n  },\n  \"P-9\": {\n    \"vis\": {\n      \"legendOpen\": false\n    }\n  }\n}",
+      "panelsJSON": "[{\"col\":7,\"id\":\"privNet20LargestMiners\",\"panelIndex\":1,\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":7,\"id\":\"privNetblocksBySize\",\"panelIndex\":2,\"row\":3,\"size_x\":6,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"privNetblocksByNumTransactions\",\"panelIndex\":5,\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":10,\"id\":\"privNetblocksIndexed\",\"panelIndex\":6,\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"privNetavgGasUsedByDay\",\"panelIndex\":7,\"row\":7,\"size_x\":6,\"size_y\":2,\"type\":\"visualization\"},{\"col\":7,\"id\":\"privNetblocksByExtraData\",\"panelIndex\":8,\"row\":5,\"size_x\":6,\"size_y\":4,\"type\":\"visualization\"},{\"col\":4,\"id\":\"privNetblocksByNumUncles\",\"panelIndex\":9,\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"privNetnumTransactionsByDay\",\"panelIndex\":10,\"row\":3,\"size_x\":6,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"privNetavgDifficultyOverTime\",\"panelIndex\":11,\"row\":5,\"size_x\":6,\"size_y\":2,\"type\":\"visualization\"}]",
+      "optionsJSON": "{\"darkTheme\":true}",
+      "uiStateJSON": "{\"P-1\":{\"vis\":{\"legendOpen\":true}},\"P-10\":{\"vis\":{\"legendOpen\":false}},\"P-11\":{\"vis\":{\"colors\":{\"Averagedifficulty\":\"#BF1B00\"},\"legendOpen\":false}},\"P-2\":{\"spy\":{\"mode\":{\"fill\":false,\"name\":null}},\"vis\":{\"legendOpen\":false}},\"P-7\":{\"vis\":{\"legendOpen\":false}},\"P-9\":{\"vis\":{\"legendOpen\":false}}}",
       "version": 1,
       "timeRestore": false,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\n  \"filter\": [\n    {\n      \"query\": {\n        \"query_string\": {\n          \"analyze_wildcard\": true,\n          \"query\": \"*\"\n        }\n      }\n    }\n  ]\n}"
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
       }
     }
   },
@@ -20,16 +20,16 @@
     "_id": "privNetTransactionDash",
     "_type": "dashboard",
     "_source": {
-      "title": "Private Net ethereumTransactionDash",
+      "title": "PrivateNet ethereumTransactionDash",
       "hits": 0,
       "description": "",
-      "panelsJSON": "[\n  {\n    \"col\": 1,\n    \"id\": \"privNetmostValuableAddresses\",\n    \"panelIndex\": 1,\n    \"row\": 1,\n    \"size_x\": 6,\n    \"size_y\": 4,\n    \"type\": \"visualization\"\n  },\n  {\n    \"col\": 7,\n    \"id\": \"privNetavgTxValueOverTime\",\n    \"panelIndex\": 2,\n    \"row\": 1,\n    \"size_x\": 6,\n    \"size_y\": 3,\n    \"type\": \"visualization\"\n  },\n  {\n    \"col\": 7,\n    \"id\": \"privNettransactionCount\",\n    \"panelIndex\": 3,\n    \"row\": 7,\n    \"size_x\": 6,\n    \"size_y\": 2,\n    \"type\": \"visualization\"\n  },\n  {\n    \"col\": 7,\n    \"id\": \"privNetavgGasOverTime\",\n    \"panelIndex\": 4,\n    \"row\": 4,\n    \"size_x\": 6,\n    \"size_y\": 3,\n    \"type\": \"visualization\"\n  },\n  {\n    \"id\": \"privNetmostValuableSources\",\n    \"type\": \"visualization\",\n    \"panelIndex\": 5,\n    \"size_x\": 6,\n    \"size_y\": 2,\n    \"col\": 1,\n    \"row\": 5\n  },\n  {\n    \"id\": \"privNetmostValuableTargets\",\n    \"type\": \"visualization\",\n    \"panelIndex\": 6,\n    \"size_x\": 6,\n    \"size_y\": 2,\n    \"col\": 1,\n    \"row\": 7\n  }\n]",
-      "optionsJSON": "{\n  \"darkTheme\": true\n}",
-      "uiStateJSON": "{\n  \"P-2\": {\n    \"vis\": {\n      \"legendOpen\": false\n    },\n    \"spy\": {\n      \"mode\": {\n        \"name\": null,\n        \"fill\": false\n      }\n    }\n  },\n  \"P-4\": {\n    \"vis\": {\n      \"colors\": {\n        \"Average gas\": \"#508642\"\n      },\n      \"legendOpen\": false\n    }\n  }\n}",
+      "panelsJSON": "[{\"col\":1,\"id\":\"privNetmostValuableAddresses\",\"panelIndex\":1,\"row\":1,\"size_x\":6,\"size_y\":4,\"type\":\"visualization\"},{\"col\":7,\"id\":\"privNetavgTxValueOverTime\",\"panelIndex\":2,\"row\":1,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"col\":7,\"id\":\"privNettransactionCount\",\"panelIndex\":3,\"row\":7,\"size_x\":6,\"size_y\":2,\"type\":\"visualization\"},{\"col\":7,\"id\":\"privNetavgGasOverTime\",\"panelIndex\":4,\"row\":4,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"id\":\"privNetmostValuableSources\",\"type\":\"visualization\",\"panelIndex\":5,\"size_x\":6,\"size_y\":2,\"col\":1,\"row\":5},{\"id\":\"privNetmostValuableTargets\",\"type\":\"visualization\",\"panelIndex\":6,\"size_x\":6,\"size_y\":2,\"col\":1,\"row\":7}]",
+      "optionsJSON": "{\"darkTheme\":true}",
+      "uiStateJSON": "{\"P-2\":{\"vis\":{\"legendOpen\":false},\"spy\":{\"mode\":{\"name\":null,\"fill\":false}}},\"P-4\":{\"vis\":{\"colors\":{\"Averagegas\":\"#508642\"},\"legendOpen\":false}}}",
       "version": 1,
       "timeRestore": false,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\n  \"filter\": [\n    {\n      \"query\": {\n        \"query_string\": {\n          \"analyze_wildcard\": true,\n          \"query\": \"*\"\n        }\n      }\n    }\n  ]\n}"
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
       }
     }
   }
