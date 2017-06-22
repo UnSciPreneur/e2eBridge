@@ -8,7 +8,7 @@
     "port": 9200,
     "index": {
       "name": "ethereum",
-      "number_of_shards": 3,
+      "number_of_shards": 2,
       "number_of_replicas": 0
     }
   },

@@ -99,8 +99,7 @@ function printStats() {
 function clearIndex(callback) {
   logger.info('Dropping index...');
   // ToDo: check if the index exists
-  elasticClient.destroy();
-  callback();
+  elasticClient.destroy(callback);
 }
 
 function initIndex() {
