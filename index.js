@@ -64,7 +64,7 @@ if (options.mode) {
         output: process.stdout
       });
 
-      rl.question('Are you sure you want to initialize the index? [y/N] ', function (answer) {
+      rl.question('Are you sure you want to initialize the index (' + config.get('elasticsearch.index.name') + ')? [y/N] ', function (answer) {
         console.log("you entered: [" + answer.toString().trim() + "]");
         if (answer.toString().trim() === 'y' || answer.toString().trim() === 'Y') {
           clearIndex(initIndex);
