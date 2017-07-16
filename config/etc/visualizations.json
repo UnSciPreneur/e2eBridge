@@ -1,239 +1,239 @@
 [
   {
-    "_id": "privNet_20LargestMiners",
+    "_id": "etc_20LargestMiners",
     "_type": "visualization",
     "_source": {
-      "title": "PrivateNet 20LargestMiners",
+      "title": "ETC 20LargestMiners",
       "visState": "{\"aggs\":[{\"id\":\"1\",\"params\":{},\"schema\":\"metric\",\"type\":\"count\"},{\"id\":\"2\",\"params\":{\"field\":\"miner.keyword\",\"order\":\"desc\",\"orderBy\":\"1\",\"size\":20},\"schema\":\"segment\",\"type\":\"terms\"}],\"listeners\":{},\"params\":{\"addLegend\":true,\"addTooltip\":true,\"isDonut\":false,\"shareYAxis\":true},\"title\":\"New Visualization\",\"type\":\"pie\"}",
       "uiStateJSON": "{}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"privatenet\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"etc\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[]}"
       }
     }
   },
   {
-    "_id": "privNet_blocksByNumTransactions",
+    "_id": "etc_blocksByNumTransactions",
     "_type": "visualization",
     "_source": {
-      "title": "PrivateNet blocksByNumTransactions",
+      "title": "ETC blocksByNumTransactions",
       "visState": "{\"title\":\"New Visualization\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"numTransactions\",\"interval\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
       "uiStateJSON": "{}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"privatenet\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"etc\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
   {
-    "_id": "privNet_blocksByExtraData",
+    "_id": "etc_blocksByExtraData",
     "_type": "visualization",
     "_source": {
-      "title": "PrivateNet blocksByExtraData",
+      "title": "ETC blocksByExtraData",
       "visState": "{\"aggs\":[{\"id\":\"1\",\"params\":{},\"schema\":\"metric\",\"type\":\"count\"},{\"id\":\"2\",\"params\":{\"field\":\"extraData.keyword\",\"order\":\"desc\",\"orderBy\":\"1\",\"size\":10},\"schema\":\"bucket\",\"type\":\"terms\"}],\"listeners\":{},\"params\":{\"perPage\":10,\"showMeticsAtAllLevels\":false,\"showPartialRows\":false},\"title\":\"New Visualization\",\"type\":\"table\"}",
       "uiStateJSON": "{}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"privatenet\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"etc\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[]}"
       }
     }
   },
   {
-    "_id": "privNet_blocksBySize",
+    "_id": "etc_blocksBySize",
     "_type": "visualization",
     "_source": {
-      "title": "PrivateNet blocksBySize",
+      "title": "ETC blocksBySize",
       "visState": "{\"title\": \"blocksBySize\",\"type\": \"histogram\",\"params\": {\"addLegend\": true,\"addTimeMarker\": false,\"addTooltip\": true,\"defaultYExtents\": false,\"mode\": \"stacked\",\"scale\": \"linear\",\"setYExtents\": false,\"shareYAxis\": true,\"times\": [],\"yAxis\": {}},\"aggs\": [  {\"id\": \"1\",\"type\": \"count\",\"schema\": \"metric\",\"params\": {}},{\"id\": \"2\",\"type\": \"histogram\",\"schema\": \"segment\",\"params\": {\"field\": \"size\",\"interval\": 10,\"min_doc_count\": true,\"extended_bounds\": {\"min\": 400,\"max\": 1200}}}],\"listeners\": {}\n}",
       "uiStateJSON": "{\"vis\": {\"colors\": {\"Count\": \"#447EBC\"}}\n}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\": \"privatenet\",\"query\": {\"query_string\": {\"query\": \"size:[400 TO 1200]\",\"analyze_wildcard\": true}},\"filter\": []\n}"
+        "searchSourceJSON": "{\"index\": \"etc\",\"query\": {\"query_string\": {\"query\": \"size:[400 TO 1200]\",\"analyze_wildcard\": true}},\"filter\": []\n}"
       }
     }
   },
   {
-    "_id": "privNet_avgNumTransactionsPerBlock",
+    "_id": "etc_avgNumTransactionsPerBlock",
     "_type": "visualization",
     "_source": {
-      "title": "PrivateNet avgNumTransactionsPerBlock",
+      "title": "ETC avgNumTransactionsPerBlock",
       "visState": "{\"aggs\": [  {\"id\": \"1\",\"params\": {\"field\": \"numTransactions\"},\"schema\": \"metric\",\"type\": \"avg\"},{\"id\": \"2\",\"params\": {\"customInterval\": \"2h\",\"extended_bounds\": {},\"field\": \"timestamp\",\"interval\": \"d\",\"min_doc_count\": 1},\"schema\": \"segment\",\"type\": \"date_histogram\"}],\"listeners\": {},\"params\": {\"addLegend\": true,\"addTimeMarker\": false,\"addTooltip\": true,\"defaultYExtents\": false,\"mode\": \"stacked\",\"scale\": \"linear\",\"setYExtents\": false,\"shareYAxis\": true,\"times\": [],\"yAxis\": {}},\"title\": \"New Visualization\",\"type\": \"histogram\"\n}",
       "uiStateJSON": "{}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\": \"privatenet\",\"query\": {\"query_string\": {\"analyze_wildcard\": true,\"query\": \"NOT _id:0\"}},\"filter\": []\n}"
+        "searchSourceJSON": "{\"index\": \"etc\",\"query\": {\"query_string\": {\"analyze_wildcard\": true,\"query\": \"NOT _id:0\"}},\"filter\": []\n}"
       }
     }
   },
   {
-    "_id": "privNet_numTransactionsByDay",
+    "_id": "etc_numTransactionsByDay",
     "_type": "visualization",
     "_source": {
-      "title": "PrivateNet numTransactionsByDay",
+      "title": "ETC numTransactionsByDay",
       "visState": "{\"title\": \"New Visualization\",\"type\": \"histogram\",\"params\": {\"shareYAxis\": true,\"addTooltip\": true,\"addLegend\": true,\"scale\": \"linear\",\"mode\": \"stacked\",\"times\": [],\"addTimeMarker\": false,\"defaultYExtents\": false,\"setYExtents\": false,\"yAxis\": {}},\"aggs\": [  {\"id\": \"1\",\"type\": \"sum\",\"schema\": \"metric\",\"params\": {\"field\": \"numTransactions\"}},{\"id\": \"2\",\"type\": \"date_histogram\",\"schema\": \"segment\",\"params\": {\"field\": \"timestamp\",\"interval\": \"d\",\"customInterval\": \"2h\",\"min_doc_count\": 1,\"extended_bounds\": {}}}],\"listeners\": {}\n}",
       "uiStateJSON": "{}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\": \"privatenet\",\"query\": {\"query_string\": {\"query\": \"NOT _id:0\",\"analyze_wildcard\": true}},\"filter\": []\n}"
+        "searchSourceJSON": "{\"index\": \"etc\",\"query\": {\"query_string\": {\"query\": \"NOT _id:0\",\"analyze_wildcard\": true}},\"filter\": []\n}"
       }
     }
   },
   {
-    "_id": "privNet_blocksByNumUncles",
+    "_id": "etc_blocksByNumUncles",
     "_type": "visualization",
     "_source": {
-      "title": "PrivateNet blocksByNumUncles",
+      "title": "ETC blocksByNumUncles",
       "visState": "{\"title\":\"New Visualization\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"numUncles\",\"interval\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
       "uiStateJSON": "{}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"privatenet\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"etc\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
   {
-    "_id": "privNet_blocksByDay",
+    "_id": "etc_blocksByDay",
     "_type": "visualization",
     "_source": {
-      "title": "PrivateNet blocksByDay",
+      "title": "ETC blocksByDay",
       "visState": "{\"title\": \"blocksByHour\",\"type\": \"histogram\",\"params\": {\"shareYAxis\": true,\"addTooltip\": true,\"addLegend\": true,\"scale\": \"linear\",\"mode\": \"stacked\",\"times\": [],\"addTimeMarker\": false,\"defaultYExtents\": false,\"setYExtents\": false,\"yAxis\": {}},\"aggs\": [  {\"id\": \"1\",\"type\": \"count\",\"schema\": \"metric\",\"params\": {}},{\"id\": \"2\",\"type\": \"date_histogram\",\"schema\": \"segment\",\"params\": {\"field\": \"timestamp\",\"interval\": \"d\",\"customInterval\": \"2h\",\"min_doc_count\": 1,\"extended_bounds\": {}}}],\"listeners\": {}\n}",
       "uiStateJSON": "{}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\": \"privatenet\",\"query\": {\"query_string\": {\"query\": \"NOT _id:0\",\"analyze_wildcard\": true}},\"filter\": []}"
+        "searchSourceJSON": "{\"index\": \"etc\",\"query\": {\"query_string\": {\"query\": \"NOT _id:0\",\"analyze_wildcard\": true}},\"filter\": []}"
       }
     }
   },
   {
-    "_id": "privNet_mostValuableAddresses",
+    "_id": "etc_mostValuableAddresses",
     "_type": "visualization",
     "_source": {
-      "title": "PrivateNet mostValuableAddresses",
+      "title": "ETC mostValuableAddresses",
       "visState": "{\"title\":\"New Visualization\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"value\",\"customLabel\":\"value of tx\"}},{\"id\":\"2\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"number of tx\"}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"to.keyword\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
       "uiStateJSON": "{}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"privatenet\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"etc\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
   {
-    "_id": "privNet_avgDifficultyOverTime",
+    "_id": "etc_avgDifficultyOverTime",
     "_type": "visualization",
     "_source": {
-      "title": "PrivateNet avgDifficultyOverTime",
+      "title": "ETC avgDifficultyOverTime",
       "visState": "{\"title\":\"New Visualization\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"difficulty\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"timestamp\",\"interval\":\"d\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
       "uiStateJSON": "{}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"privatenet\",\"query\":{\"query_string\":{\"query\":\"NOT _id:0\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"etc\",\"query\":{\"query_string\":{\"query\":\"NOT _id:0\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
   {
-    "_id": "privNet_avgGasUsedByDay",
+    "_id": "etc_avgGasUsedByDay",
     "_type": "visualization",
     "_source": {
-      "title": "PrivateNet avgGasUsedByDay",
+      "title": "ETC avgGasUsedByDay",
       "visState": "{\"title\":\"avgGasUsedByDay\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"gasUsed\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"timestamp\",\"interval\":\"d\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
       "uiStateJSON": "{}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"privatenet\",\"query\":{\"query_string\":{\"query\":\"NOT _id:0 AND _type:block\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"etc\",\"query\":{\"query_string\":{\"query\":\"NOT _id:0 AND _type:block\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
   {
-    "_id": "privNet_avgTxValueOverTime",
+    "_id": "etc_avgTxValueOverTime",
     "_type": "visualization",
     "_source": {
-      "title": "PrivateNet avgTxValueOverTime",
+      "title": "ETC avgTxValueOverTime",
       "visState": "{\"title\":\"avgTxValueOverTime\",\"type\":\"histogram\",\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"defaultYExtents\":false,\"mode\":\"stacked\",\"scale\":\"linear\",\"setYExtents\":false,\"shareYAxis\":true,\"times\":[],\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"value\"}},{\"id\":\"2\",\"type\":\"histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"blockNumber\",\"interval\":7200,\"extended_bounds\":{}}}],\"listeners\":{}}",
       "uiStateJSON": "{}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"privatenet\",\"query\":{\"query_string\":{\"query\":\"_type:transaction\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"etc\",\"query\":{\"query_string\":{\"query\":\"_type:transaction\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
   {
-    "_id": "privNet_avgGasOverTime",
+    "_id": "etc_avgGasOverTime",
     "_type": "visualization",
     "_source": {
-      "title": "PrivateNet avgGasOverTime",
+      "title": "ETC avgGasOverTime",
       "visState": "{\"title\":\"avgTxValueOverTime\",\"type\":\"histogram\",\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"defaultYExtents\":false,\"mode\":\"stacked\",\"scale\":\"linear\",\"setYExtents\":false,\"shareYAxis\":true,\"times\":[],\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"gas\"}},{\"id\":\"2\",\"type\":\"histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"blockNumber\",\"interval\":7200,\"extended_bounds\":{}}}],\"listeners\":{}}",
       "uiStateJSON": "{}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"privatenet\",\"query\":{\"query_string\":{\"query\":\"_type:transaction\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"etc\",\"query\":{\"query_string\":{\"query\":\"_type:transaction\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
   {
-    "_id": "privNet_transactionCount",
+    "_id": "etc_transactionCount",
     "_type": "visualization",
     "_source": {
-      "title": "PrivateNet transactionCount",
+      "title": "ETC transactionCount",
       "visState": "{\"title\":\"New Visualization\",\"type\":\"metric\",\"params\":{\"handleNoResults\":true,\"fontSize\":36},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}}],\"listeners\":{}}",
       "uiStateJSON": "{}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"privatenet\",\"query\":{\"query_string\":{\"query\":\"_type:transaction\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"etc\",\"query\":{\"query_string\":{\"query\":\"_type:transaction\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
   {
-    "_id": "privNet_blocksIndexed",
+    "_id": "etc_blocksIndexed",
     "_type": "visualization",
     "_source": {
-      "title": "PrivateNet blocksIndexed",
+      "title": "ETC blocksIndexed",
       "visState": "{\"title\":\"blocksIndexed\",\"type\":\"metric\",\"params\":{\"handleNoResults\":true,\"fontSize\":36},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}}],\"listeners\":{}}",
       "uiStateJSON": "{}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"privatenet\",\"query\":{\"query_string\":{\"query\":\"_type:block\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"etc\",\"query\":{\"query_string\":{\"query\":\"_type:block\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
   {
-    "_id": "privNet_mostValuableSources",
+    "_id": "etc_mostValuableSources",
     "_type": "visualization",
     "_source": {
-      "title": "PrivateNet mostValuableSources",
+      "title": "ETC mostValuableSources",
       "visState": "{\"title\":\"New Visualization\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"value\"}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"from.keyword\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
       "uiStateJSON": "{}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"privatenet\",\"query\":{\"query_string\":{\"query\":\"_type:transaction\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"etc\",\"query\":{\"query_string\":{\"query\":\"_type:transaction\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
   {
-    "_id": "privNet_mostValuableTargets",
+    "_id": "etc_mostValuableTargets",
     "_type": "visualization",
     "_source": {
-      "title": "PrivateNet mostValuableTargets",
+      "title": "ETC mostValuableTargets",
       "visState": "{\"title\":\"mostValuableSources\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"value\"}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"to.keyword\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
       "uiStateJSON": "{}",
       "description": "",
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"privatenet\",\"query\":{\"query_string\":{\"query\":\"_type:transaction\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"etc\",\"query\":{\"query_string\":{\"query\":\"_type:transaction\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   }

@@ -1,9 +1,9 @@
 [
   {
-    "_id": "20LargestMiners",
+    "_id": "eth_20LargestMiners",
     "_type": "visualization",
     "_source": {
-      "title": "20LargestMiners",
+      "title": "ETH 20LargestMiners",
       "visState": "{\"aggs\":[{\"id\":\"1\",\"params\":{},\"schema\":\"metric\",\"type\":\"count\"},{\"id\":\"2\",\"params\":{\"field\":\"miner.keyword\",\"order\":\"desc\",\"orderBy\":\"1\",\"size\":20},\"schema\":\"segment\",\"type\":\"terms\"}],\"listeners\":{},\"params\":{\"addLegend\":true,\"addTooltip\":true,\"isDonut\":false,\"shareYAxis\":true},\"title\":\"New Visualization\",\"type\":\"pie\"}",
       "uiStateJSON": "{}",
       "description": "",
@@ -14,10 +14,10 @@
     }
   },
   {
-    "_id": "blocksByNumTransactions",
+    "_id": "eth_blocksByNumTransactions",
     "_type": "visualization",
     "_source": {
-      "title": "blocksByNumTransactions",
+      "title": "ETH blocksByNumTransactions",
       "visState": "{\"title\":\"New Visualization\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"numTransactions\",\"interval\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
       "uiStateJSON": "{}",
       "description": "",
@@ -28,10 +28,10 @@
     }
   },
   {
-    "_id": "blocksByExtraData",
+    "_id": "eth_blocksByExtraData",
     "_type": "visualization",
     "_source": {
-      "title": "blocksByExtraData",
+      "title": "ETH blocksByExtraData",
       "visState": "{\"aggs\":[{\"id\":\"1\",\"params\":{},\"schema\":\"metric\",\"type\":\"count\"},{\"id\":\"2\",\"params\":{\"field\":\"extraData.keyword\",\"order\":\"desc\",\"orderBy\":\"1\",\"size\":10},\"schema\":\"bucket\",\"type\":\"terms\"}],\"listeners\":{},\"params\":{\"perPage\":10,\"showMeticsAtAllLevels\":false,\"showPartialRows\":false},\"title\":\"New Visualization\",\"type\":\"table\"}",
       "uiStateJSON": "{}",
       "description": "",
@@ -42,10 +42,10 @@
     }
   },
   {
-    "_id": "blocksBySize",
+    "_id": "eth_blocksBySize",
     "_type": "visualization",
     "_source": {
-      "title": "blocksBySize",
+      "title": "ETH blocksBySize",
       "visState": "{\"title\": \"blocksBySize\",\"type\": \"histogram\",\"params\": {\"addLegend\": true,\"addTimeMarker\": false,\"addTooltip\": true,\"defaultYExtents\": false,\"mode\": \"stacked\",\"scale\": \"linear\",\"setYExtents\": false,\"shareYAxis\": true,\"times\": [],\"yAxis\": {}},\"aggs\": [  {\"id\": \"1\",\"type\": \"count\",\"schema\": \"metric\",\"params\": {}},{\"id\": \"2\",\"type\": \"histogram\",\"schema\": \"segment\",\"params\": {\"field\": \"size\",\"interval\": 10,\"min_doc_count\": true,\"extended_bounds\": {\"min\": 400,\"max\": 1200}}}],\"listeners\": {}\n}",
       "uiStateJSON": "{\"vis\": {\"colors\": {\"Count\": \"#447EBC\"}}\n}",
       "description": "",
@@ -56,10 +56,10 @@
     }
   },
   {
-    "_id": "avgNumTransactionsPerBlock",
+    "_id": "eth_avgNumTransactionsPerBlock",
     "_type": "visualization",
     "_source": {
-      "title": "avgNumTransactionsPerBlock",
+      "title": "ETH avgNumTransactionsPerBlock",
       "visState": "{\"aggs\": [  {\"id\": \"1\",\"params\": {\"field\": \"numTransactions\"},\"schema\": \"metric\",\"type\": \"avg\"},{\"id\": \"2\",\"params\": {\"customInterval\": \"2h\",\"extended_bounds\": {},\"field\": \"timestamp\",\"interval\": \"d\",\"min_doc_count\": 1},\"schema\": \"segment\",\"type\": \"date_histogram\"}],\"listeners\": {},\"params\": {\"addLegend\": true,\"addTimeMarker\": false,\"addTooltip\": true,\"defaultYExtents\": false,\"mode\": \"stacked\",\"scale\": \"linear\",\"setYExtents\": false,\"shareYAxis\": true,\"times\": [],\"yAxis\": {}},\"title\": \"New Visualization\",\"type\": \"histogram\"\n}",
       "uiStateJSON": "{}",
       "description": "",
@@ -70,10 +70,10 @@
     }
   },
   {
-    "_id": "numTransactionsByDay",
+    "_id": "eth_numTransactionsByDay",
     "_type": "visualization",
     "_source": {
-      "title": "numTransactionsByDay",
+      "title": "ETH numTransactionsByDay",
       "visState": "{\"title\": \"New Visualization\",\"type\": \"histogram\",\"params\": {\"shareYAxis\": true,\"addTooltip\": true,\"addLegend\": true,\"scale\": \"linear\",\"mode\": \"stacked\",\"times\": [],\"addTimeMarker\": false,\"defaultYExtents\": false,\"setYExtents\": false,\"yAxis\": {}},\"aggs\": [  {\"id\": \"1\",\"type\": \"sum\",\"schema\": \"metric\",\"params\": {\"field\": \"numTransactions\"}},{\"id\": \"2\",\"type\": \"date_histogram\",\"schema\": \"segment\",\"params\": {\"field\": \"timestamp\",\"interval\": \"d\",\"customInterval\": \"2h\",\"min_doc_count\": 1,\"extended_bounds\": {}}}],\"listeners\": {}\n}",
       "uiStateJSON": "{}",
       "description": "",
@@ -84,10 +84,10 @@
     }
   },
   {
-    "_id": "blocksByNumUncles",
+    "_id": "eth_blocksByNumUncles",
     "_type": "visualization",
     "_source": {
-      "title": "blocksByNumUncles",
+      "title": "ETH blocksByNumUncles",
       "visState": "{\"title\":\"New Visualization\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"numUncles\",\"interval\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
       "uiStateJSON": "{}",
       "description": "",
@@ -98,10 +98,10 @@
     }
   },
   {
-    "_id": "blocksByDay",
+    "_id": "eth_blocksByDay",
     "_type": "visualization",
     "_source": {
-      "title": "blocksByDay",
+      "title": "ETH blocksByDay",
       "visState": "{\"title\": \"blocksByHour\",\"type\": \"histogram\",\"params\": {\"shareYAxis\": true,\"addTooltip\": true,\"addLegend\": true,\"scale\": \"linear\",\"mode\": \"stacked\",\"times\": [],\"addTimeMarker\": false,\"defaultYExtents\": false,\"setYExtents\": false,\"yAxis\": {}},\"aggs\": [  {\"id\": \"1\",\"type\": \"count\",\"schema\": \"metric\",\"params\": {}},{\"id\": \"2\",\"type\": \"date_histogram\",\"schema\": \"segment\",\"params\": {\"field\": \"timestamp\",\"interval\": \"d\",\"customInterval\": \"2h\",\"min_doc_count\": 1,\"extended_bounds\": {}}}],\"listeners\": {}\n}",
       "uiStateJSON": "{}",
       "description": "",
@@ -112,10 +112,10 @@
     }
   },
   {
-    "_id": "mostValuableAddresses",
+    "_id": "eth_mostValuableAddresses",
     "_type": "visualization",
     "_source": {
-      "title": "mostValuableAddresses",
+      "title": "ETH mostValuableAddresses",
       "visState": "{\"title\":\"New Visualization\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"value\",\"customLabel\":\"value of tx\"}},{\"id\":\"2\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"number of tx\"}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"to.keyword\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
       "uiStateJSON": "{}",
       "description": "",
@@ -126,10 +126,10 @@
     }
   },
   {
-    "_id": "avgDifficultyOverTime",
+    "_id": "eth_avgDifficultyOverTime",
     "_type": "visualization",
     "_source": {
-      "title": "avgDifficultyOverTime",
+      "title": "ETH avgDifficultyOverTime",
       "visState": "{\"title\":\"New Visualization\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"difficulty\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"timestamp\",\"interval\":\"d\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
       "uiStateJSON": "{}",
       "description": "",
@@ -140,10 +140,10 @@
     }
   },
   {
-    "_id": "avgGasUsedByDay",
+    "_id": "eth_avgGasUsedByDay",
     "_type": "visualization",
     "_source": {
-      "title": "avgGasUsedByDay",
+      "title": "ETH avgGasUsedByDay",
       "visState": "{\"title\":\"avgGasUsedByDay\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"gasUsed\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"timestamp\",\"interval\":\"d\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
       "uiStateJSON": "{}",
       "description": "",
@@ -154,10 +154,10 @@
     }
   },
   {
-    "_id": "avgTxValueOverTime",
+    "_id": "eth_avgTxValueOverTime",
     "_type": "visualization",
     "_source": {
-      "title": "avgTxValueOverTime",
+      "title": "ETH avgTxValueOverTime",
       "visState": "{\"title\":\"avgTxValueOverTime\",\"type\":\"histogram\",\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"defaultYExtents\":false,\"mode\":\"stacked\",\"scale\":\"linear\",\"setYExtents\":false,\"shareYAxis\":true,\"times\":[],\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"value\"}},{\"id\":\"2\",\"type\":\"histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"blockNumber\",\"interval\":7200,\"extended_bounds\":{}}}],\"listeners\":{}}",
       "uiStateJSON": "{}",
       "description": "",
@@ -168,10 +168,10 @@
     }
   },
   {
-    "_id": "avgGasOverTime",
+    "_id": "eth_avgGasOverTime",
     "_type": "visualization",
     "_source": {
-      "title": "avgGasOverTime",
+      "title": "ETH avgGasOverTime",
       "visState": "{\"title\":\"avgTxValueOverTime\",\"type\":\"histogram\",\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"defaultYExtents\":false,\"mode\":\"stacked\",\"scale\":\"linear\",\"setYExtents\":false,\"shareYAxis\":true,\"times\":[],\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"gas\"}},{\"id\":\"2\",\"type\":\"histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"blockNumber\",\"interval\":7200,\"extended_bounds\":{}}}],\"listeners\":{}}",
       "uiStateJSON": "{}",
       "description": "",
@@ -182,10 +182,10 @@
     }
   },
   {
-    "_id": "transactionCount",
+    "_id": "eth_transactionCount",
     "_type": "visualization",
     "_source": {
-      "title": "transactionCount",
+      "title": "ETH transactionCount",
       "visState": "{\"title\":\"New Visualization\",\"type\":\"metric\",\"params\":{\"handleNoResults\":true,\"fontSize\":36},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}}],\"listeners\":{}}",
       "uiStateJSON": "{}",
       "description": "",
@@ -196,10 +196,10 @@
     }
   },
   {
-    "_id": "blocksIndexed",
+    "_id": "eth_blocksIndexed",
     "_type": "visualization",
     "_source": {
-      "title": "blocksIndexed",
+      "title": "ETH blocksIndexed",
       "visState": "{\"title\":\"blocksIndexed\",\"type\":\"metric\",\"params\":{\"handleNoResults\":true,\"fontSize\":36},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}}],\"listeners\":{}}",
       "uiStateJSON": "{}",
       "description": "",
@@ -210,10 +210,10 @@
     }
   },
   {
-    "_id": "mostValuableSources",
+    "_id": "eth_mostValuableSources",
     "_type": "visualization",
     "_source": {
-      "title": "mostValuableSources",
+      "title": "ETH mostValuableSources",
       "visState": "{\"title\":\"New Visualization\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"value\"}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"from.keyword\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
       "uiStateJSON": "{}",
       "description": "",
@@ -224,10 +224,10 @@
     }
   },
   {
-    "_id": "mostValuableTargets",
+    "_id": "eth_mostValuableTargets",
     "_type": "visualization",
     "_source": {
-      "title": "mostValuableTargets",
+      "title": "ETH mostValuableTargets",
       "visState": "{\"title\":\"mostValuableSources\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"value\"}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"to.keyword\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
       "uiStateJSON": "{}",
       "description": "",
