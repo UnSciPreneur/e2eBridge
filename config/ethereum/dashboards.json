@@ -3,7 +3,7 @@
     "_id": "eth_ethereumBlockDash",
     "_type": "dashboard",
     "_source": {
-      "title": "ethereumBlockDash",
+      "title": "ETH BlockDash",
       "hits": 0,
       "description": "",
       "panelsJSON": "[{\"col\":7,\"id\":\"eth_20LargestMiners\",\"panelIndex\":1,\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":7,\"id\":\"eth_blocksBySize\",\"panelIndex\":2,\"row\":3,\"size_x\":6,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"eth_blocksByNumTransactions\",\"panelIndex\":5,\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":10,\"id\":\"eth_blocksIndexed\",\"panelIndex\":6,\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"eth_avgGasUsedByDay\",\"panelIndex\":7,\"row\":7,\"size_x\":6,\"size_y\":2,\"type\":\"visualization\"},{\"col\":7,\"id\":\"eth_blocksByExtraData\",\"panelIndex\":8,\"row\":5,\"size_x\":6,\"size_y\":4,\"type\":\"visualization\"},{\"col\":4,\"id\":\"eth_blocksByNumUncles\",\"panelIndex\":9,\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"eth_numTransactionsByDay\",\"panelIndex\":10,\"row\":3,\"size_x\":6,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"eth_avgDifficultyOverTime\",\"panelIndex\":11,\"row\":5,\"size_x\":6,\"size_y\":2,\"type\":\"visualization\"}]",
@@ -20,7 +20,7 @@
     "_id": "eth_ethereumTransactionDash",
     "_type": "dashboard",
     "_source": {
-      "title": "ethereumTransactionDash",
+      "title": "ETH TransactionDash",
       "hits": 0,
       "description": "",
       "panelsJSON": "[{\"col\":1,\"id\":\"eth_mostValuableAddresses\",\"panelIndex\":1,\"row\":1,\"size_x\":6,\"size_y\":4,\"type\":\"visualization\"},{\"col\":7,\"id\":\"eth_avgTxValueOverTime\",\"panelIndex\":2,\"row\":1,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"col\":7,\"id\":\"eth_transactionCount\",\"panelIndex\":3,\"row\":7,\"size_x\":6,\"size_y\":2,\"type\":\"visualization\"},{\"col\":7,\"id\":\"eth_avgGasOverTime\",\"panelIndex\":4,\"row\":4,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"id\":\"eth_mostValuableSources\",\"type\":\"visualization\",\"panelIndex\":5,\"size_x\":6,\"size_y\":2,\"col\":1,\"row\":5},{\"id\":\"eth_mostValuableTargets\",\"type\":\"visualization\",\"panelIndex\":6,\"size_x\":6,\"size_y\":2,\"col\":1,\"row\":7}]",

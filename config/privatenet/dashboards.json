@@ -3,7 +3,7 @@
     "_id": "privNet_BlockDash",
     "_type": "dashboard",
     "_source": {
-      "title": "PrivateNet ethereumBlockDash",
+      "title": "PrivateNet BlockDash",
       "hits": 0,
       "description": "",
       "panelsJSON": "[{\"col\":7,\"id\":\"privNet_20LargestMiners\",\"panelIndex\":1,\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":7,\"id\":\"privNet_blocksBySize\",\"panelIndex\":2,\"row\":3,\"size_x\":6,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"privNet_blocksByNumTransactions\",\"panelIndex\":5,\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":10,\"id\":\"privNet_blocksIndexed\",\"panelIndex\":6,\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"privNet_avgGasUsedByDay\",\"panelIndex\":7,\"row\":7,\"size_x\":6,\"size_y\":2,\"type\":\"visualization\"},{\"col\":7,\"id\":\"privNet_blocksByExtraData\",\"panelIndex\":8,\"row\":5,\"size_x\":6,\"size_y\":4,\"type\":\"visualization\"},{\"col\":4,\"id\":\"privNet_blocksByNumUncles\",\"panelIndex\":9,\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"privNet_numTransactionsByDay\",\"panelIndex\":10,\"row\":3,\"size_x\":6,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"privNet_avgDifficultyOverTime\",\"panelIndex\":11,\"row\":5,\"size_x\":6,\"size_y\":2,\"type\":\"visualization\"}]",
@@ -20,7 +20,7 @@
     "_id": "privNet_TransactionDash",
     "_type": "dashboard",
     "_source": {
-      "title": "PrivateNet ethereumTransactionDash",
+      "title": "PrivateNet TransactionDash",
       "hits": 0,
       "description": "",
       "panelsJSON": "[{\"col\":1,\"id\":\"privNet_mostValuableAddresses\",\"panelIndex\":1,\"row\":1,\"size_x\":6,\"size_y\":4,\"type\":\"visualization\"},{\"col\":7,\"id\":\"privNet_avgTxValueOverTime\",\"panelIndex\":2,\"row\":1,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"col\":7,\"id\":\"privNet_transactionCount\",\"panelIndex\":3,\"row\":7,\"size_x\":6,\"size_y\":2,\"type\":\"visualization\"},{\"col\":7,\"id\":\"privNet_avgGasOverTime\",\"panelIndex\":4,\"row\":4,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"id\":\"privNet_mostValuableSources\",\"type\":\"visualization\",\"panelIndex\":5,\"size_x\":6,\"size_y\":2,\"col\":1,\"row\":5},{\"id\":\"privNet_mostValuableTargets\",\"type\":\"visualization\",\"panelIndex\":6,\"size_x\":6,\"size_y\":2,\"col\":1,\"row\":7}]",
