@@ -7,6 +7,7 @@ const log4js = require('log4js');
 const blockParser = require('./lib/blockParser');
 const transactionParser = require('./lib/transactionParser');
 const combinedParser = require('./lib/combinedParser');
+const contractParser = require('./lib/contractParser');
 const elasticClient = require('./lib/elasticClient');
 
 const logger = log4js.getLogger('main');
@@ -49,6 +50,11 @@ if (options.mode) {
       from = options.from || 0;
       to = options.to || Infinity;
       transactionParser.batchRun(from, to);
+      break;
+    case 'contracts':
+      from = options.from || 0;
+      to = options.to || Infinity;
+      contractParser.batchRun(from, to);
       break;
     case 'setup':
       logger.warn('All your current data will be lost!');

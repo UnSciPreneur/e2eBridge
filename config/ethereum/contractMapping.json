@@ -1,7 +1,10 @@
 {
-  "transaction" : {
+  "contract" : {
     "properties" : {
       "contractAddress" : {
+        "type" : "string"
+      },
+      "codeHash" : {
         "type" : "string"
       },
       "transactionIndex" : {

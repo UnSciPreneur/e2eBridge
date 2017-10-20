@@ -86,7 +86,13 @@ Now we import the visualizations and dashboards over the web GUI. The config fil
 ### Discovery with Kibana
 
 Search for contract creating transactions:
-`_type:transaction AND blockNumber:[0 TO 1900000] AND NOT to:*`
+```
+_type:transaction AND blockNumber:[4000000 TO 4100000] AND NOT to:*
+```
+or 
+```
+_type:transaction AND blockNumber:[4000000 TO 4100000] AND !(_exists_:"to") 
+```
 
 ## Usage
 

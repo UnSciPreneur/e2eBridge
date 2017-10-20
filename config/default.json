@@ -16,7 +16,8 @@
     "example": {
       "address": "0x",
       "index": ""
-    }
+    },
+    "batchsize": 100
   },
   "logging": {
     "level": "debug"
