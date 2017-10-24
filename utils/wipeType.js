@@ -15,7 +15,6 @@ const logger = log4js.getLogger('elastic');
 logger.setLevel(config.get('logging.level'));
 
 
-
 function searchType(type, callback) {
   client.search({
       index: config.get('elasticsearch.index.name'),
@@ -62,24 +61,29 @@ function searchType(type, callback) {
 
 function deleteType(type, index) {
 
-  client.delete({
-    index: 'ethereum',
-    type: 'contract',
-    id: type.hits.hits[index]._id
-  }, function (error, response) {
-    if (error) {
-      logger.error(error);
-      process.exit();
-    }
-    if (response) {
-      logger.info(response.result + ' ' + response._index + '/' + response._type + '/' + response._id);
-    }
-    if (index + 1 < type.hits.hits.length) {
-      deleteType(type, index + 1);
-    } else {
-      process.exit();
-    }
-  });
+  if (type.hits.hits.length > index) {
+    client.delete({
+      index: config.get('elasticsearch.index.name'),
+      type: type.hits.hits[index]._type,
+      id: type.hits.hits[index]._id
+    }, function (error, response) {
+      if (error) {
+        logger.error(error);
+        process.exit();
+      }
+      if (response) {
+        logger.info(response.result + ' ' + response._index + '/' + response._type + '/' + response._id);
+      }
+      if (index + 1 < type.hits.hits.length) {
+        deleteType(type, index + 1);
+      } else {
+        process.exit();
+      }
+    });
+  } else {
+    logger.error('Invalid index!');
+    process.exit();
+  }
 }
 
 searchType('contract', function (contract) {
