@@ -13,6 +13,9 @@
       "value" : {
         "type" : "double"
       },
+      "balance" : {
+        "type" : "double"
+      },
       "gas" : {
         "type" : "long"
       },

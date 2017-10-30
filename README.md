@@ -65,6 +65,7 @@ In a second step we define mappings for our types:
 curl -XPUT 'http://localhost:9200/ethereum/block/_mapping' -d @config/ethereum/blockMapping.json
 curl -XPUT 'http://localhost:9200/ethereum/transaction/_mapping' -d @config/ethereum/transactionMapping.json
 curl -XPUT 'http://localhost:9200/ethereum/address/_mapping' -d @config/ethereum/addressMapping.json
+curl -XPUT 'http://localhost:9200/ethereum/contract/_mapping' -d @config/ethereum/contractMapping.json
 ```
 
 You can verify the result with

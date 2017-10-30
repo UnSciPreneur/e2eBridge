@@ -56,6 +56,11 @@ if (options.mode) {
       to = options.to || Infinity;
       contractParser.batchRun(from, to);
       break;
+    case 'update':
+      from = options.from || 0;
+      to = options.to || Infinity;
+      contractParser.update(from, to);
+      break;     
     case 'setup':
       logger.warn('All your current data will be lost!');
 
