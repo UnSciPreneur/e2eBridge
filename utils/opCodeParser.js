@@ -182,15 +182,22 @@ var opCodeParser = {
         logger.warn('Unknown opcode %s', opCode.toString(16));
         break;
       }
-      output += opCodes[opCode].name;
+      output += padLeft((i/2).toString(16), 4) + ':\t' + opCodes[opCode].name;
       if (opCodes[opCode].add) {
         output += '\t0x';
         output += opcodes.substr(i+2, 2 * opCodes[opCode].add);
         i += 2 * opCodes[opCode].add;
       }
+      output += '\n';
     }
     return(output);
   }
 };
 
 module.exports = opCodeParser;
+
+function padLeft(num, totalLen) {
+  var s = num + '';
+  while (s.length < totalLen) s = '0' + s;
+  return '0x' + s;
+}
