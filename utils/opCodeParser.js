@@ -175,29 +175,49 @@ var opCodeParser = {
     if (opcodes.substr(0,2) === '0x') {
       opcodes = opcodes.substr(2);
     }
-    var output = '';
-    for (var i=0; i < opcodes.length; i += 2) {
-      var opCode = parseInt(opcodes.substr(i,2),16);
-      if (opCodes[opCode] === undefined) {
-        logger.warn('Unknown opcode %s', opCode.toString(16));
-        break;
-      }
-      output += padLeft((i/2).toString(16), 4) + ':\t' + opCodes[opCode].name;
-      if (opCodes[opCode].add) {
-        output += '\t0x';
-        output += opcodes.substr(i+2, 2 * opCodes[opCode].add);
-        i += 2 * opCodes[opCode].add;
-      }
-      output += '\n';
-    }
+    var output = parseOpCodes(opcodes);
     return(output);
+  },
+
+  detect: function (opcodes) {
+    if (opcodes.substr(0, 2) === '0x') {
+      opcodes = opcodes.substr(2);
+    }
+    var output = detectDeploymentDelimiter(opcodes);
+    return (output);
   }
 };
 
 module.exports = opCodeParser;
 
+function parseOpCodes(opcodes) {
+    var output = '';
+    for (var i = 0; i < opcodes.length; i += 2) {
+        var opCode = parseInt(opcodes.substr(i, 2), 16);
+        if (opCodes[opCode] === undefined) {
+            logger.warn('Unknown opcode %s', opCode.toString(16));
+            break;
+        }
+        output += '0x' + padLeft((i / 2).toString(16), 4) + ':\t(' + padLeft(opCode.toString(16),2) + ')\t' + opCodes[opCode].name;
+        if (opCodes[opCode].add) {
+            output += '\t0x';
+            output += opcodes.substr(i + 2, 2 * opCodes[opCode].add);
+            i += 2 * opCodes[opCode].add;
+        }
+        output += '\n';
+    }
+    return output;
+} 
+
+function detectDeploymentDelimiter(opcodes) {
+  var match = opcodes.match(/61[0-9a-f]{4}6000396000f3/);
+  var index = opcodes.indexOf(match);
+  return (match + ' at ' + (index/2).toString(16) + ':' + (index/2 + 9).toString(16));
+}
+
+
 function padLeft(num, totalLen) {
   var s = num + '';
   while (s.length < totalLen) s = '0' + s;
-  return '0x' + s;
+  return s;
 }

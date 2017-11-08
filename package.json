@@ -15,15 +15,15 @@
     "node": ">=0.10"
   },
   "dependencies": {
-    "elasticsearch": "13.2.0",
     "command-line-args": "^2.1.1",
     "config": "^1.16.0",
+    "crypto-js": "^3.1.9-1",
+    "elasticsearch": "13.2.0",
+    "ethereumjs-util": "^5.1.2",
+    "ethereumjs-vm": "2.3.2",
     "log4js": "0.6.37",
     "rlp": "2.0.0",
-    "sha3": "1.2.0",
-    "crypto-js": "^3.1.9-1",
-    "ethereumjs-util": "^5.1.2",
-    "ethereumjs-vm": "2.3.2"
+    "sha3": "1.2.0"
   },
   "devDependencies": {
     "mocha": "2.3.0",
