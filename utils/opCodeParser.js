@@ -167,7 +167,7 @@ const opCodes = {
   0xf2: {name: "CALLCODE", add: 0, args: 7, ret: 1},
   0xf3: {name: "RETURN", add: 0, args: 2, ret: 0},
   0xf4: {name: "DELEGATECALL", add: 0, args: 6, ret: 1},
-  
+
   0xfa: {name: "STATICCALL", add: 0, args: 6, ret: 1},    // not in the original yellow paper
   0xfb: {name: "CREATE2", add: 0, args: 4, ret: 1},       // not in the original yellow paper
   0xfd: {name: "REVERT", add: 0, args: 2, ret: 0},        // not in the original yellow paper
@@ -180,11 +180,11 @@ var opCodeParser = {
 
   // expects a hex encoded string of opcodes
   parse: function (opcodes) {
-    if (opcodes.substr(0,2) === '0x') {
+    if (opcodes.substr(0, 2) === '0x') {
       opcodes = opcodes.substr(2);
     }
     var output = parseOpCodes(opcodes);
-    return(output);
+    return (output);
   },
 
   detect: function (opcodes) {
@@ -199,28 +199,28 @@ var opCodeParser = {
 module.exports = opCodeParser;
 
 function parseOpCodes(opcodes) {
-    var output = '';
-    for (var i = 0; i < opcodes.length; i += 2) {
-        var opCode = parseInt(opcodes.substr(i, 2), 16);
-        if (opCodes[opCode] === undefined) {
-            logger.warn('Unknown opcode %s', opCode.toString(16));
-            break;
-        }
-        output += '0x' + padLeft((i / 2).toString(16), 4) + ':\t(' + padLeft(opCode.toString(16),2) + ')\t' + opCodes[opCode].name;
-        if (opCodes[opCode].add) {
-            output += '\t0x';
-            output += opcodes.substr(i + 2, 2 * opCodes[opCode].add);
-            i += 2 * opCodes[opCode].add;
-        }
-        output += '\n';
+  var output = '';
+  for (var i = 0; i < opcodes.length; i += 2) {
+    var opCode = parseInt(opcodes.substr(i, 2), 16);
+    if (opCodes[opCode] === undefined) {
+      logger.warn('Unknown opcode %s', opCode.toString(16));
+      break;
     }
-    return output;
-} 
+    output += '0x' + padLeft((i / 2).toString(16), 4) + ':\t(' + padLeft(opCode.toString(16), 2) + ')\t' + opCodes[opCode].name;
+    if (opCodes[opCode].add) {
+      output += '\t0x';
+      output += opcodes.substr(i + 2, 2 * opCodes[opCode].add);
+      i += 2 * opCodes[opCode].add;
+    }
+    output += '\n';
+  }
+  return output;
+}
 
 function detectDeploymentDelimiter(opcodes) {
   var match = opcodes.match(/61[0-9a-f]{4}6000396000f3/);
   var index = opcodes.indexOf(match);
-  return (match + ' at ' + (index/2).toString(16) + ':' + (index/2 + 9).toString(16));
+  return (match + ' at ' + (index / 2).toString(16) + ':' + (index / 2 + 9).toString(16));
 }
 
 
