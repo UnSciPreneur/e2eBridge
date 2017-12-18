@@ -132,3 +132,16 @@ elasticdump --input=http://localhost:9200/.kibana --output=http://app.b0x.it:920
 
 see https://github.com/nexusdev/elastic-ethereum
 see https://github.com/ethereum/research/blob/master/uncle_regressions/block_datadump_generator.py
+
+# Docker Support
+
+This project can be run as a Docker container. To build the Docker image execute
+```
+docker build -t e2ebridge .
+``` 
+in the project root. You can then run a container via
+``` 
+docker run -d --link elstack --link geth --name e2eBridge e2ebridge:latest
+```
+**Watch out:** This container expects another container called `geth` which provides an JSON rpc interface on port `8545` and a container `elstack` which provides an Elasticsearch instance on port `9200`. 
+ 

@@ -4,3 +4,4 @@ node_modules
 *.njsproj
 *.sln
 logs
+package-lock.json
