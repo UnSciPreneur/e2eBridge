@@ -42,6 +42,6 @@
   "scripts": {
     "start": "node index follow",
     "setup": "node index setup",
-    "test": "find . -regex '.*/jobs/.*/test/.*.js' | xargs mocha"
+    "test": "find . -regex '.*/tests/.*/.*.js' | xargs mocha"
   }
 }
