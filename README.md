@@ -104,6 +104,12 @@ You can add an address manually by running
 curl -XPUT 'http://localhost:9200/ethereum/address/0x2910543af39aba0cd09dbb2d50200b3e800a63d2' -d '{"comment" : "Kraken"}'
 ```
 
+### Known Issues of Elasticsearch
+
+Elasticsearch does not support integers beyond 2^63-1 = 9223372036854775807 = 9 * 10^18 (data type `long`). This obviously is to little for the value field in transactions (and for totalDifficulty in blocks).
+*Workaround:* Instead of integer values we store `float(value / 1000000000)`, i.e. we denote values in floating Gwei instead of Wei.
+As difficulty/totalDifficulty is slightly smaller than values of transaction we use the divisor 1000000, i.e. we store `float(totalDifficulty / 1000000)` and `float(difficulty / 1000000)`.
+
 # Other
 
 ## elasticdump
@@ -120,7 +126,7 @@ elasticdump \
 
 Transfer kibana settings from local machine to server:
 ```bash
-elasticdump --input=http://localhost:9200/.kibana --output=http://app.b0x.it:9200/.kibana --type=data --searchBody='{"filter": { "or": [ {"type": {"value": "dashboard"}}, {"type" : {"value":"visualization"}}] }}'
+elasticdump --input=http://localhost:9200/.kibana --output=http://target-server.tld:9200/.kibana --type=data --searchBody='{"filter": { "or": [ {"type": {"value": "dashboard"}}, {"type" : {"value":"visualization"}}] }}'
 ```
 
 ## Ethereum RPC
