@@ -4,11 +4,8 @@
       "contractAddress" : {
         "type" : "string"
       },
-      "codeHash" : {
+      "inputHash" : {
         "type" : "string"
-      },
-      "transactionIndex" : {
-        "type" : "long"
       },
       "value" : {
         "type" : "double"
@@ -17,9 +14,6 @@
         "type" : "double"
       },
       "gas" : {
-        "type" : "long"
-      },
-      "gasPrice" : {
         "type" : "long"
       },
       "blockNumber" : {

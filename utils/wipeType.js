@@ -1,3 +1,7 @@
+/*
+   Helper method that removes all documents of type CONTRACT from Elastic Search index
+ */
+
 'use strict';
 
 const config = require('config');
