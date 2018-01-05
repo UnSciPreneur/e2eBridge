@@ -1,14 +1,18 @@
 {
   "ethereum": {
-    "host": "localhost",
+    "host": "127.0.0.1",
+    "private_host": "172.31.21.137",
+    "host1": "18.195.250.163",
+    "host2": "163.172.68.238",
     "port": 8545
   },
   "elasticsearch": {
-    "host": "localhost",
+    "host": "127.0.0.1",
+    "private_host": "172.31.29.59",
     "port": 9200,
     "index": {
       "name": "ethereum",
-      "number_of_shards": 2,
+      "number_of_shards": 1,
       "number_of_replicas": 0
     }
   },
@@ -18,6 +22,10 @@
       "index": ""
     },
     "batchsize": 100
+  },
+  "constants" : {
+    "value_quotient" : 1000000000,
+    "difficulty_quotient" : 1000000
   },
   "logging": {
     "level": "debug"

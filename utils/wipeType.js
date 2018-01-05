@@ -35,7 +35,7 @@ function searchType(type, callback) {
               range: {
                 blockNumber: {
                   gte: 0,
-                  lte: 1000000
+                  lte: 5000000
                 }
               }
             }
