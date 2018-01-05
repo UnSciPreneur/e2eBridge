@@ -1,23 +1,22 @@
 {
-  "contract" : {
-    "properties" : {
-      "contractAddress" : {
-        "type" : "string"
-      },
-      "inputHash" : {
-        "type" : "string"
-      },
-      "value" : {
-        "type" : "double"
-      },
-      "balance" : {
-        "type" : "double"
-      },
-      "gas" : {
-        "type" : "long"
-      },
-      "blockNumber" : {
-        "type" : "long"
+  "mappings": {
+    "contract": {
+      "properties": {
+        "value": {
+          "type": "double"
+        },
+        "balance": {
+          "type": "double"
+        },
+        "gas": {
+          "type": "long"
+        },
+        "blockNumber": {
+          "type": "long"
+        },
+        "timestamp": {
+          "type": "date"
+        }
       }
     }
   }

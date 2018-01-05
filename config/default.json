@@ -10,22 +10,34 @@
     "host": "127.0.0.1",
     "private_host": "172.31.29.59",
     "port": 9200,
-    "index": {
-      "name": "ethereum",
-      "number_of_shards": 1,
-      "number_of_replicas": 0
+    "indices": {
+      "blocks": {
+        "name": "blocks",
+        "number_of_shards": 1,
+        "number_of_replicas": 0
+      },
+      "transactions": {
+        "name": "transactions",
+        "number_of_shards": 1,
+        "number_of_replicas": 0
+      },
+      "contracts": {
+        "name": "contracts",
+        "number_of_shards": 1,
+        "number_of_replicas": 0
+      }
     }
   },
-  "contracts" : {
+  "contracts": {
     "example": {
       "address": "0x",
       "index": ""
     },
     "batchsize": 100
   },
-  "constants" : {
-    "value_quotient" : 1000000000,
-    "difficulty_quotient" : 1000000
+  "constants": {
+    "value_quotient": 1000000000,
+    "difficulty_quotient": 1000000
   },
   "logging": {
     "level": "debug"

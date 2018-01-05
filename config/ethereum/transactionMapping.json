@@ -1,20 +1,25 @@
 {
-  "transaction" : {
-    "properties" : {
-      "transactionIndex" : {
-        "type" : "long"
-      },
-      "value" : {
-        "type" : "double"
-      },
-      "gas" : {
-        "type" : "long"
-      },
-      "gasPrice" : {
-        "type" : "long"
-      },
-      "blockNumber" : {
-        "type" : "long"
+  "mappings": {
+    "transaction": {
+      "properties": {
+        "transactionIndex": {
+          "type": "long"
+        },
+        "value": {
+          "type": "double"
+        },
+        "gas": {
+          "type": "long"
+        },
+        "gasPrice": {
+          "type": "long"
+        },
+        "blockNumber": {
+          "type": "long"
+        },
+        "timestamp": {
+          "type": "date"
+        }
       }
     }
   }

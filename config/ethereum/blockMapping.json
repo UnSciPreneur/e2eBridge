@@ -1,26 +1,28 @@
 {
-  "block" : {
-    "properties" : {
-      "number" : {
-        "type" : "long"
-      },
-      "numUncles" : {
-        "type" : "long"
-      },
-      "numTransactions" : {
-        "type" : "long"
-      },
-      "gasUsed" : {
-        "type" : "long"
-      },
-      "gasLimit" : {
-        "type" : "long"
-      },
-      "size" : {
-        "type" : "long"
-      },
-      "timestamp" : {
-        "type" : "date"
+  "mappings": {
+    "block": {
+      "properties": {
+        "number": {
+          "type": "long"
+        },
+        "numUncles": {
+          "type": "long"
+        },
+        "numTransactions": {
+          "type": "long"
+        },
+        "gasUsed": {
+          "type": "long"
+        },
+        "gasLimit": {
+          "type": "long"
+        },
+        "size": {
+          "type": "long"
+        },
+        "timestamp": {
+          "type": "date"
+        }
       }
     }
   }

@@ -76,7 +76,7 @@ if (options.mode) {
         output: process.stdout
       });
 
-      rl.question('Are you sure you want to initialize the index (' + config.get('elasticsearch.index.name') + ')? [y/N] ', function (answer) {
+      rl.question('Are you sure you want to (re-)initialize all indices (' + config.get('elasticsearch.indices.blocks.name') + ', ' + config.get('elasticsearch.indices.transactions.name') + ', ' + config.get('elasticsearch.indices.contracts.name') + ')? [y/N] ', function (answer) {
         console.log("you entered: [" + answer.toString().trim() + "]");
         if (answer.toString().trim() === 'y' || answer.toString().trim() === 'Y') {
           clearIndex(initIndex);
@@ -96,7 +96,7 @@ if (options.mode) {
 
 function printStats() {
   elasticClient.getStats(function (stats) {
-    logger.info('The index [' + config.get('elasticsearch.index.name') + '] contains ' + stats.blockCount + ' blocks and ' + stats.transactionCount + ' transactions.');
+    logger.info('The indices [' + config.get('elasticsearch.indices.blocks.name') + ', ' + config.get('elasticsearch.indices.transactions.name') + '] contain ' + stats.blockCount + ' blocks and ' + stats.transactionCount + ' transactions.');
 
     elasticClient.getHighestBlockIndex(function (highestIndex) {
       if (!highestIndex) {

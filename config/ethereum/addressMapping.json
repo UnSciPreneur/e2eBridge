@@ -1,11 +1,13 @@
 {
-  "address" : {
-    "properties" : {
-      "class" : {
-        "type" : "string"
-      },
-      "comment" : {
-        "type" : "string"
+  "mappings": {
+    "address": {
+      "properties": {
+        "class": {
+          "type": "string"
+        },
+        "comment": {
+          "type": "string"
+        }
       }
     }
   }
