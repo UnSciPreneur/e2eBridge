@@ -74,6 +74,7 @@ curl -XPUT 'http://localhost:9200/contracts' -d@config/ethereum/contractMapping.
 
 You can verify the result with
 ```bash
+curl -XGET 'localhost:9200/_cat/indices?v'
 curl -XGET 'localhost:9200/blocks/_mappings'
 curl -XGET 'localhost:9200/transactions/_mappings'
 curl -XGET 'localhost:9200/contracts/_mappings'
@@ -83,9 +84,18 @@ curl -XGET 'localhost:9200/contracts/_mappings'
 
 ### Configuring Kibana
 
-**Note:** Before configuring Kibana it might be necessary to actually import (some) data. Else certain fields are not available and some visualizations cannot be imported!
+**Note:** Before configuring Kibana it might be necessary to actually import (some) data. Else certain indices/fields are not available and some visualizations cannot be imported!
 
-Now we import the visualizations and dashboards over the web GUI. The config files can be found in 
+### Setting up index patterns
+
+We recommend to set up four index patterns:
+   * `blocks`
+   * `transactions`
+   * `contracts`
+   * `*`
+The patterns one through three correspond to exactly one type each. The fourth pattern comprises all types (which then can be internally distinguished by the field `_type`.)
+
+Next we import the visualizations and dashboards over the web GUI. The config files can be found in 
 `config/ethereum/visualizations.json` and `config/ethereum/dashboards.json`
 
 ### Discovery with Kibana
