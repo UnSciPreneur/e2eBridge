@@ -2,13 +2,14 @@
   "private": true,
   "license": "Unlicensed",
   "author": "Andreas Bogner",
-  "name": "e2e-bridge",
-  "description": "A bridge between the ethereum blockchain and elasticsearch",
-  "version": "0.0.1",
+  "email": "mail@unscipreneur.com",
+  "name": "e2eBridge",
+  "description": "A bridge between the Ethereum blockchain and Elasticsearch",
+  "version": "0.1.0",
   "homepage": "",
   "repository": {
-    "type": "svn",
-    "url": ""
+    "type": "git",
+    "url": "https://github.com/UnSciPreneur/e2eBridge"
   },
   "engines": {
     "npm": "~2.0.0",
@@ -36,7 +37,9 @@
   },
   "keywords": [
     "ethereum",
-    "elasticsearch"
+    "elasticsearch",
+    "blockchain",
+    "analyser"
   ],
   "main": "./e2eBridge.js",
   "scripts": {

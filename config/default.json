@@ -13,18 +13,15 @@
     "indices": {
       "blocks": {
         "name": "blocks",
-        "number_of_shards": 1,
-        "number_of_replicas": 0
+        "mapping_file": "blockMapping.json"
       },
       "transactions": {
         "name": "transactions",
-        "number_of_shards": 1,
-        "number_of_replicas": 0
+        "mapping_file": "transactionMapping.json"
       },
       "contracts": {
         "name": "contracts",
-        "number_of_shards": 1,
-        "number_of_replicas": 0
+        "mapping_file": "contractMapping.json"
       }
     }
   },

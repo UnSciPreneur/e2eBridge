@@ -56,12 +56,12 @@ if (options.mode) {
       to = options.to || Infinity;
       contractParser.batchRun(from, to);
       break;
-    case 'updateBalances':
+    case 'contractBalances':
       from = options.from || 0;
       to = options.to || Infinity;
       contractParser.batchBalanceUpdate(from, to);
       break;
-    case 'updateCode':
+    case 'contractCodes':
       from = options.from || 0;
       to = options.to || Infinity;
       contractParser.batchCodeUpdate(from, to);
@@ -79,7 +79,9 @@ if (options.mode) {
       rl.question('Are you sure you want to (re-)initialize all indices (' + config.get('elasticsearch.indices.blocks.name') + ', ' + config.get('elasticsearch.indices.transactions.name') + ', ' + config.get('elasticsearch.indices.contracts.name') + ')? [y/N] ', function (answer) {
         console.log("you entered: [" + answer.toString().trim() + "]");
         if (answer.toString().trim() === 'y' || answer.toString().trim() === 'Y') {
-          clearIndex(initIndex);
+          clearIndex('blocks', initIndex);
+          clearIndex('transactions', initIndex);
+          clearIndex('contracts', initIndex);
         }
         rl.close();
       });
@@ -88,10 +90,17 @@ if (options.mode) {
       logger.warn('Unknown mode ' + options.mode);
   }
 } else {
-  console.log('Please call as \'node e2eBridge MODE\' where MODE is one of the following:');
-  console.log('\t stats \t\t\t show some numbers');
-  console.log('\t follow \t\t start indexing blocks at highest index in db');
-  console.log('\t batch -f \<f\> -t \<t\>\t index blocks between \<f\> and \<t\>');
+  console.log('Please call as \'node index \<MODE\>\' where \<MODE\> is one of the following:\n');
+  console.log('\t stats \t\t\t\t show some numbers');
+  console.log('\t follow \t\t\t start indexing blocks at highest index in db');
+  console.log('\t batch -f \<f\> -t \<t\>\t\t index blocks (and corresponding transactions) between \<f\> and \<t\>');
+  console.log('\t blocks -f \<f\> -t \<t\>\t\t same as \'batch\' but only indexing blocks');
+  console.log('\t transactions -f \<f\> -t \<t\>\t same as \'batch\' but only indexing transactions');
+  console.log('\t contracts -f \<f\> -t \<t\>\t same as \'batch\' but only indexing contracts');
+  console.log('\t contractBalances -f \<f\> -t \<t\>\t update contract balances for blocks between \<f\> and \<t\>');
+  console.log('\t contractCodes -f \<f\> -t \<t\>\t update contract code for blocks between \<f\> and \<t\>\n');
+  console.log('NOTE: \tYou have to run the tool in mode \'contracts\' at least once before');
+  console.log('\t\'contractBalances\' and \'contractCodes\' will do anything.');
 }
 
 function printStats() {
@@ -108,15 +117,14 @@ function printStats() {
   });
 }
 
-function clearIndex(callback) {
-  logger.info('Dropping index...');
-  // ToDo: check if the index exists
-  elasticClient.destroy(callback);
+function clearIndex(idx, callback) {
+  logger.info('Dropping index [%s] if it exists.', idx);
+  elasticClient.destroyIndexIfExists(idx, callback);
 }
 
-function initIndex() {
-  logger.info('Initializing index...');
-  elasticClient.init();
+function initIndex(idx) {
+  logger.info('Initializing index [%s].', idx);
+  elasticClient.init(idx);
 }
 
 /*
