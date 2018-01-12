@@ -93,6 +93,7 @@ We recommend to set up four index patterns:
    * `transactions`
    * `contracts`
    * `*`
+   
 The patterns one through three correspond to exactly one type each. The fourth pattern comprises all types (which then can be internally distinguished by the field `_type`.)
 
 Next we import the visualizations and dashboards over the web GUI. The config files can be found in 

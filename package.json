@@ -41,7 +41,7 @@
     "blockchain",
     "analyser"
   ],
-  "main": "./e2eBridge.js",
+  "main": "./index.js",
   "scripts": {
     "start": "node index follow",
     "setup": "node index setup",
