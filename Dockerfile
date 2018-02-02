@@ -3,9 +3,7 @@ WORKDIR /app
 COPY package.json /app
 RUN npm install
 COPY . /app
-# CMD node index.js
-#EXPOSE 8081
 
-CMD [ "npm", "start" ]
-# CMD [ "sh" ]
-# ENTRYPOINT ["node index.js"]
+# invoke the container with a correct command line argument for <MODE>, e.g.,
+#>  docker run -d --link elstack --link geth --name e2eBridge e2ebridge:latest follow
+ENTRYPOINT [ "node", "index.js" ]

@@ -164,7 +164,8 @@ docker build -t e2ebridge .
 ``` 
 in the project root. You can then run a container via
 ``` 
-docker run -d --link elstack --link geth --name e2eBridge e2ebridge:latest
+docker run -d --link elstack --link geth --name e2eBridge e2ebridge:latest follow
 ```
-**Watch out:** This container expects another container called `geth` which provides an JSON rpc interface on port `8545` and a container `elstack` which provides an Elasticsearch instance on port `9200`. 
- 
+Here, the command line argument `follow` is passed as the MODE parameter.
+
+**Watch out:** This container expects another container called `geth` which provides an JSON rpc interface on port `8545` and a container `elstack` which provides an Elasticsearch instance on port `9200`.  
