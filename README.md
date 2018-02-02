@@ -166,6 +166,9 @@ in the project root. You can then run a container via
 ``` 
 docker run -d --link elstack --link geth --name e2eBridge e2ebridge:latest follow
 ```
-Here, the command line argument `follow` is passed as the MODE parameter.
+Here, the command line argument `follow` is passed as the MODE parameter. If the Elasticsearch/Ethereum node do not run on the same machine you may want to specify an IP address like this:
+```
+docker run -d --env ELSTACK_PORT_9200_TCP_ADDR=22.33.44.55 --env GETH_PORT_8545_TCP_ADDR=11.22.33.44 --name e2eBridge e2ebridge:latest follow
+```
 
 **Watch out:** This container expects another container called `geth` which provides an JSON rpc interface on port `8545` and a container `elstack` which provides an Elasticsearch instance on port `9200`.  
