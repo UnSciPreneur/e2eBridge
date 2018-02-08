@@ -5,3 +5,10 @@ node_modules
 *.sln
 logs
 package-lock.json
+# exclude Visual Code project files
+.vs
+.project
+.vscode
+*.code-workspace
+bin
+obj
