@@ -104,16 +104,22 @@ if (options.mode) {
 }
 
 function printStats() {
-  elasticClient.getStats(function (stats) {
-    logger.info('The indices [' + config.get('elasticsearch.indices.blocks.name') + ', ' + config.get('elasticsearch.indices.transactions.name') + '] contain ' + stats.blockCount + ' blocks and ' + stats.transactionCount + ' transactions.');
+  elasticClient.getStats(function (error, stats) {
+    if (error) {
+      logger.error(error.message);
+      process.exit(1);
+    } else {
+      logger.info('The indices [' + config.get('elasticsearch.indices.blocks.name') + ', ' + config.get('elasticsearch.indices.transactions.name') + '] contain ' + stats.blockCount + ' blocks and ' + stats.transactionCount + ' transactions.');
 
-    elasticClient.getHighestBlockIndex(function (highestIndex) {
-      if (!highestIndex) {
-        logger.warn("No blocks have been indexed yet.")
-      } else if (stats.blockCount < highestIndex + 1) {
-        logger.warn("We are missing blocks in the index: (" + stats.blockCount + '/' + highestIndex + ') present');
-      }
-    });
+      elasticClient.getHighestBlockIndex(function (highestIndex) {
+        if (!highestIndex) {
+          logger.warn("No blocks have been indexed yet.")
+        } else if (stats.blockCount < highestIndex + 1) {
+          logger.warn("We are missing blocks in the index: (" + stats.blockCount + '/' + highestIndex + ') present');
+        }
+        process.exit(0);
+      });
+    }
   });
 }
 

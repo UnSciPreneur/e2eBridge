@@ -25,7 +25,8 @@
         "name": "contracts",
         "mapping_file": "contractMapping.json"
       }
-    }
+    },
+    "retry_delay": 5000
   },
   "contracts": {
     "example": {
