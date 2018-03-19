@@ -5,7 +5,7 @@
   "email": "mail@unscipreneur.com",
   "name": "e2eBridge",
   "description": "A bridge between the Ethereum blockchain and Elasticsearch",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "homepage": "",
   "repository": {
     "type": "git",
@@ -27,7 +27,7 @@
     "sha3": "1.2.0"
   },
   "devDependencies": {
-    "mocha": "2.3.0",
+    "mocha": "^2.3.0",
     "chai": "^3.4.0",
     "sinon": "^1.17.2",
     "cheerio": ">=0.20.0",
