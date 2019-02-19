@@ -16,24 +16,24 @@
     "node": ">=0.10"
   },
   "dependencies": {
-    "command-line-args": "^2.1.1",
+    "command-line-args": "^5.0.2",
     "config": "^1.16.0",
     "crypto-js": "^3.1.9-1",
-    "elasticsearch": "13.2.0",
+    "elasticsearch": "^15.4.1",
     "ethereumjs-util": "^5.1.2",
-    "ethereumjs-vm": "2.3.2",
+    "ethereumjs-vm": "^2.6.0",
     "log4js": "0.6.37",
     "rlp": "2.0.0",
     "sha3": "1.2.0"
   },
   "devDependencies": {
-    "mocha": "^2.3.0",
+    "cache-manager": "2.1.2",
     "chai": "^3.4.0",
-    "sinon": "^1.17.2",
     "cheerio": ">=0.20.0",
     "dateformat": ">=1.0.12",
-    "xmlhttprequest": "1.8.0",
-    "cache-manager": "2.1.2"
+    "mocha": "^6.0.0",
+    "sinon": "^1.17.2",
+    "xmlhttprequest": "1.8.0"
   },
   "keywords": [
     "ethereum",

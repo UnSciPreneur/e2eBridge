@@ -1,10 +1,14 @@
+# exclude node.js files
 node_modules
-.idea
-*.iml
 *.njsproj
 *.sln
 logs
 package-lock.json
+
+# exclude Intellij project files
+.idea
+*.iml
+
 # exclude Visual Code project files
 .vs
 .project
@@ -12,3 +16,6 @@ package-lock.json
 *.code-workspace
 bin
 obj
+
+# exclude Eclipse project files
+.settings

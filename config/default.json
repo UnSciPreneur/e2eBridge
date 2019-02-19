@@ -1,16 +1,12 @@
 {
   "ethereum": {
     "host": "127.0.0.1",
-    "private_host": "172.31.21.137",
-    "host1": "18.195.250.163",
-    "host2": "163.172.68.238",
     "port": 8545,
     "retry_delay": 5000,
     "retry_attempts": 5
   },
   "elasticsearch": {
     "host": "127.0.0.1",
-    "private_host": "172.31.29.59",
     "port": 9200,
     "indices": {
       "blocks": {
@@ -40,6 +36,6 @@
     "difficulty_quotient": 1000000
   },
   "logging": {
-    "level": "debug"
+    "level": "info"
   }
 }

@@ -14,13 +14,12 @@ const logger = log4js.getLogger('main');
 logger.setLevel(config.get('logging.level'));
 
 
-const cli = commandLineArgs([
+const options = commandLineArgs([
   {name: 'mode', alias: 'm', type: String, defaultOption: true},
   {name: 'from', alias: 'f', type: Number},
   {name: 'to', alias: 't', type: Number}
 ]);
 
-var options = cli.parse();
 var from, to;
 
 if (options.mode) {
