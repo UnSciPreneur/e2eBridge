@@ -127,6 +127,11 @@ Elasticsearch does not support integers beyond 2^63-1 = 9223372036854775807 = 9 
 *Workaround:* Instead of integer values we store `float(value / 1000000000)`, i.e. we denote values in floating Gwei instead of Wei.
 As difficulty/totalDifficulty is slightly smaller than values of transaction we use the divisor 1000000, i.e. we store `float(totalDifficulty / 1000000)` and `float(difficulty / 1000000)`.
 
+## Unit Tests
+
+To run all unit tests do `npm run test`.
+
+
 # Other
 
 ## elasticdump
