@@ -58,8 +58,8 @@ function searchType(type, callback) {
       callback(-1);
     }
   }, function (err) {
-    logger.error(err.message);
-    process.exit();
+    logger.fatal('Giving up because of error: ' + err.message);
+    process.exit(1);
   });
 }
 
@@ -72,8 +72,8 @@ function deleteType(type, index) {
       id: type.hits.hits[index]._id
     }, function (error, response) {
       if (error) {
-        logger.error(error);
-        process.exit();
+        logger.fatal('Giving up because of: ' + error.message);
+        process.exit(1);
       }
       if (response) {
         logger.info(response.result + ' ' + response._index + '/' + response._type + '/' + response._id);
@@ -81,12 +81,12 @@ function deleteType(type, index) {
       if (index + 1 < type.hits.hits.length) {
         deleteType(type, index + 1);
       } else {
-        process.exit();
+        process.exit(0);
       }
     });
   } else {
-    logger.error('Invalid index!');
-    process.exit();
+    logger.fatal('Invalid index!');
+    process.exit(1);
   }
 }
 

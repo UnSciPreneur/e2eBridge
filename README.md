@@ -4,15 +4,43 @@ This tool collects data from the *Ethereum* blockchain and pumps it into an *Ela
 
 ## Requirements
 
-*e2eBridge* expects to find a geth client with rpc interface and an Elasticsearch instance. The URLs of both can be specified in the config.
+*e2eBridge* expects to find a geth/parity client with rpc interface and an Elasticsearch instance. The URLs of both can be specified in the config.
 
 The parity client has not been tested with this version of *e2eBridge* but chances are good that everything works just as well.
 
+## Running e2eBridge
+
+We will explain how to setup *e2eBridge* and its dependencies further down. Assuming you have successfully set up everything for now.
+
+To index all blocks (with block number in 1000000 to 2000000) run
+```bash
+node index batch [-f 1000000 -t 2000000]
+```
+
+Only after the previous step succeeded you can extract smart contracts into an own index via
+```bash
+node index contracts [-f 1000000 -t 2000000]
+```
+
+You might also want to set/update the current balance of each of the contracts. Note that this explicitly refers to the balance at the time the e2eBridge tool runs. The initial balance (at contract creation) is stored in the field `value`.
+```bash
+node index contractBalances [-f 1000000 -t 2000000]
+```
+
+To add the contract code to each document (= contract) in the contracts index run
+```bash
+node index contractCodes [-f 1000000 -t 2000000]
+```
+*Note:* This will require a full node or else you will get an error message. E.g., for parity
+```
+This request is not supported because your node is running with state pruning. Run with --pruning=archive.
+```
+
 ## Setup
 
-### Setting up Elasticsearch with docker
+### Setting up Elasticsearch with Docker
 
-This version has been successfully tested with Elasticsearch 6.1. So we suggest to use this particular version in the following.
+This version has been successfully tested with Elasticsearch 6.4. So we suggest to use this particular version in the following.
 
 Pull the image from docker hub (https://hub.docker.com/r/blacktop/elastic-stack/):
 ```bash
@@ -20,13 +48,34 @@ docker pull blacktop/elastic-stack:6.1
 ```
 
 ```bash
-docker run -d -p 9280:80 -p 127.0.0.1:9200:9200 --name elk blacktop/elastic-stack:6.1 
+docker run -d -p 9280:80 -p 127.0.0.1:9200:9200 --name elk blacktop/elastic-stack:6.4 
 ```
 to start up the container for the first time which is then available at `localhost:9280`. Credentials are `admin/admin`. If you want to change open a shell in the docker container
 ```bash
 docker exec -ti elk bash
 ```
 and edit `/etc/nginx/.htpasswd`.
+
+**Mandatory changes:** 
+If you want to index the mainnet chain Elasticsearch will run into memory issues with the default settings of the blacktop image. You will have to increase *heap space* within the image by editing `/usr/share/elasticsearch/config/jvm.options` setting:
+```
+-Xms4g
+-Xmx4g
+```
+
+If you want to run the setup behind a reverse proxy (e.g. for access control or added transport encryption) take the steps of the following paragraph.
+
+### Troubleshooting 
+
+If you run into an `` error you have to set `vm.max_map_count` on the host via
+```
+$ sysctl vm.max_map_count
+>> vm.max_map_count = 65530
+$ sysctl -w vm.max_map_count=262144
+>> vm.max_map_count = 262144
+```
+
+### The ELK stack behind an Nginx reverse proxy
 
 Later you can simply do
 ```bash
@@ -54,6 +103,7 @@ or from the command line:
 ```bash
 curl 'localhost:9200/_cat/indices?v'
 ```
+
 
 ### Configuring Elasticsearch
 

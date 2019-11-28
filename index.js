@@ -105,7 +105,7 @@ if (options.mode) {
 function printStats() {
   elasticClient.getStats(function (error, stats) {
     if (error) {
-      logger.error(error.message);
+      logger.fatal(error.message);
       process.exit(1);
     } else {
       logger.info('The indices [' + config.get('elasticsearch.indices.blocks.name') + ', ' + config.get('elasticsearch.indices.transactions.name') + '] contain ' + stats.blockCount + ' blocks and ' + stats.transactionCount + ' transactions.');
