@@ -1,6 +1,6 @@
 # About
 
-This tool collects data from the *Ethereum* blockchain and pumps it into an *Elasticsearch* instance. 
+This tool collects data from the *Ethereum* blockchain and pumps it into an *Elasticsearch* instance.
 
 ## Requirements
 
@@ -48,7 +48,7 @@ docker pull blacktop/elastic-stack:6.1
 ```
 
 ```bash
-docker run -d -p 9280:80 -p 127.0.0.1:9200:9200 --name elk blacktop/elastic-stack:6.4 
+docker run -d -p 9280:80 -p 127.0.0.1:9200:9200 --name elk blacktop/elastic-stack:6.4
 ```
 to start up the container for the first time which is then available at `localhost:9280`. Credentials are `admin/admin`. If you want to change open a shell in the docker container
 ```bash
@@ -56,7 +56,7 @@ docker exec -ti elk bash
 ```
 and edit `/etc/nginx/.htpasswd`.
 
-**Mandatory changes:** 
+**Mandatory changes:**
 If you want to index the mainnet chain Elasticsearch will run into memory issues with the default settings of the blacktop image. You will have to increase *heap space* within the image by editing `/usr/share/elasticsearch/config/jvm.options` setting:
 ```
 -Xms4g
@@ -65,15 +65,36 @@ If you want to index the mainnet chain Elasticsearch will run into memory issues
 
 If you want to run the setup behind a reverse proxy (e.g. for access control or added transport encryption) take the steps of the following paragraph.
 
-### Troubleshooting 
+### Troubleshooting
 
-If you run into an `` error you have to set `vm.max_map_count` on the host via
+#### Virtual memory too low
+
+If you run into an `max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]` error you have to set `vm.max_map_count` on the host via
 ```
 $ sysctl vm.max_map_count
 >> vm.max_map_count = 65530
 $ sysctl -w vm.max_map_count=262144
 >> vm.max_map_count = 262144
 ```
+
+#### Request entity too large
+
+If you receive an error code `413` (Request entity too large) make sure that Elasticsearch and the Nginx reverse proxy do support sufficiently large HTTP requests.
+
+To set http request size in Nginx put the following into `/etc/nginx/nginx.conf`:
+
+```
+http {
+    ...
+    client_max_body_size 100M;
+}
+```
+
+To set the request size in Elasticsearch set
+```
+http.max_content_length: 100mb
+```
+in `/etc/elasticsearch/elasticsearch.yml`.
 
 ### The ELK stack behind an Nginx reverse proxy
 
@@ -143,10 +164,10 @@ We recommend to set up four index patterns:
    * `transactions`
    * `contracts`
    * `*`
-   
+
 The patterns one through three correspond to exactly one type each. The fourth pattern comprises all types (which then can be internally distinguished by the field `_type`.)
 
-Next we import the visualizations and dashboards over the web GUI. The config files can be found in 
+Next we import the visualizations and dashboards over the web GUI. The config files can be found in
 `config/ethereum/visualizations.json` and `config/ethereum/dashboards.json`
 
 ### Discovery with Kibana
@@ -155,16 +176,16 @@ Search for contract creating transactions: Select the index `transactions` and r
 ```
 blockNumber:[4000000 TO 4100000] AND NOT to:*
 ```
-or 
+or
 ```
-blockNumber:[4000000 TO 4100000] AND !(_exists_:"to") 
+blockNumber:[4000000 TO 4100000] AND !(_exists_:"to")
 ```
 
 ## Usage
 
 ### Elasticsearch
 
-***The index for addresses is work in progress and not yet implemented.*** 
+***The index for addresses is work in progress and not yet implemented.***
 
 You can add an address manually by running
 ```bash
@@ -216,9 +237,9 @@ see https://github.com/ethereum/research/blob/master/uncle_regressions/block_dat
 This project can be run as a Docker container. To build the Docker image execute
 ```
 docker build -t e2ebridge .
-``` 
+```
 in the project root. You can then run a container via
-``` 
+```
 docker run -d --link elstack --link geth --name e2eBridge e2ebridge:latest follow
 ```
 Here, the command line argument `follow` is passed as the MODE parameter. If the Elasticsearch/Ethereum node do not run on the same machine you may want to specify an IP address like this:
@@ -226,4 +247,4 @@ Here, the command line argument `follow` is passed as the MODE parameter. If the
 docker run -d --env ELSTACK_PORT_9200_TCP_ADDR=22.33.44.55 --env GETH_PORT_8545_TCP_ADDR=11.22.33.44 --name e2eBridge e2ebridge:latest follow
 ```
 
-**Watch out:** This container expects another container called `geth` which provides an JSON rpc interface on port `8545` and a container `elstack` which provides an Elasticsearch instance on port `9200`.  
+**Watch out:** This container expects another container called `geth` which provides an JSON rpc interface on port `8545` and a container `elstack` which provides an Elasticsearch instance on port `9200`.
