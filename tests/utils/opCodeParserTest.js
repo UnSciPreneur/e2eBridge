@@ -16,7 +16,21 @@ describe('opCodeParser', function () {
   });
 
 
-  it('parse() handles long input correctly', function () {
+  it('parses code correctly', function () {
+    // this is a very short synthetic example
+
+    var opCodes = '0x606060405260e060020a60003504';
+
+    var result = opCodeParser.parse(opCodes);
+
+    console.log(result);
+
+    expect(result.length).to.equal(200);
+
+    expect(result.substring(13,18)).to.equal("PUSH1");
+  });
+
+  it('parses long input correctly', function () {
     // those are some opcodes from the contract at 0xa327075af2a223a1c83a36ada1126afe7430f955
 
     var opCodes = '0x6060604052361561001f5760e060020a600035046372ea4b8c811461010c575b61011b3460008080678ac7230489e8000084106101d557600180548101908190556003805433929081101561000257906000526020600020900160006101000a815481600160a060020a0302191690830217905550678ac7230489e80000840393508350678ac7230489e800006000600082828250540192505081905550600260016000505411151561011d576003';
@@ -145,6 +159,8 @@ describe('opCodeParser', function () {
     opCodes = '7f726567697374657200000000000000000000000000000000000000000000000060003514156053576020355415603257005b335415603e5760003354555b6020353360006000a233602035556020353355005b60007f756e72656769737465720000000000000000000000000000000000000000000060003514156082575033545b1560995733335460006000a2600033545560003355005b60007f6b696c6c00000000000000000000000000000000000000000000000000000000600035141560cb575060455433145b1560d25733ff5b6000355460005260206000f3';
 
     console.log(opCodeParser.parse(opCodes));
+
+    // ToDo: add meaningful assertions here or remove test!
   });
 
   it('detects the creation header correctly', function () {
@@ -153,6 +169,8 @@ describe('opCodeParser', function () {
 
     // console.log(opCodeParser.parse(opCodes));
     console.log(opCodeParser.detect(opCodes));
+
+    // ToDo: add meaningful assertions here or remove test!
   });
 
   it('parses opcodes correctly', function () {
@@ -161,6 +179,8 @@ describe('opCodeParser', function () {
 
     // console.log(opCodeParser.parse(opCodes));
     console.log(opCodeParser.parse(opCodes));
+
+    // ToDo: add meaningful assertions here or remove test!
   });
 
   it('handles contract creation correctly', function () {
@@ -169,6 +189,8 @@ describe('opCodeParser', function () {
     var opCodes = '0x6060604052341561000c57fe5b5b61170f8061001c6000396000f300';
 
     console.log(opCodeParser.parse(opCodes));
+
+    // ToDo: add meaningful assertions here or remove test!
   });
 
   it('handles real world contracts correctly - part1', function () {
@@ -207,8 +229,9 @@ describe('opCodeParser', function () {
       '5b81600160a060020a03168360030160009054906101000a9004600160a060020a0316600160a060' +
       '020a0316141561022c5761000256';
 
-
     console.log(opCodeParser.parse(opCodes));
+
+    // ToDo: add meaningful assertions here or remove test!
   });
 
 
@@ -248,6 +271,8 @@ describe('opCodeParser', function () {
       '031614156102065761000256';
 
     console.log(opCodeParser.parse(opCodes));
+
+    // ToDo: add meaningful assertions here or remove test!
   });
 
 
@@ -260,5 +285,7 @@ describe('opCodeParser', function () {
       '6080578091506094565b5b80806001019150506065565b8291506094565b5091905056';
 
     console.log(opCodeParser.parse(opCodes));
+
+    // ToDo: add meaningful assertions here or remove test!
   });
 });
